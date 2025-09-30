@@ -1,0 +1,116 @@
+
+
+
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Overpass:ital,wght@0,100..900;1,100..900&family=Pinyon+Script&family=Unbounded:wght@200..900&display=swap');
+
+*
+{
+    margin: 0;
+    padding:0;
+    list-style: none;
+    text-decoration:none;
+    box-sizing: border-box;
+    
+}
+
+body{
+    font-family: Overpass;
+    font-size: 12px;
+}
+
+#bienvenida{
+    background-image: url(../IMG/tp238-background-03.jpg);
+    background-repeat: no-repeat;
+    background-position: center;
+
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    left: 0;
+    top:0;
+    transition: top 1s ease-out;
+    
+}
+
+#unico h1{
+    
+    font-family: Unbounded;
+    font-size: 75px;
+    color: aliceblue;
+    text-align: center;
+    
+}
+
+#checkAvanzar{
+    display: none;
+}
+
+#btnAvanzar{
+    position: absolute;
+    cursor: pointer;
+    background-color: #fcfcfc;
+    border-radius: 5px;
+    left: 675px;
+    bottom: 50px;
+    font-size: 40px;
+    color: white;
+    padding: 10px 15px;
+    transition: all 1s ease;
+    z-index: 10;
+
+}
+
+
+.inicio{
+    position: absolute;      
+    top: 100vh;             
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    background-color: #fff;  
+
+    /*z-index: 1;*/
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    transition: all 1s ease;
+}
+
+footer{
+    position: fixed;
+    bottom: -60px; 
+    left: 0;
+    width: 100%;
+    height: 60px;
+    background-color: #042331;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: all 1s ease;
+}
+
+#checkAvanzar:checked ~ .inicio{
+    top: 0;
+
+}
+
+
+#checkAvanzar:checked ~ #bienvenida{
+    top:-100vh;
+
+}
+
+#checkAvanzar:checked ~ footer{
+    bottom: 0;
+
+}
+
+#checkAvanzar:checked ~ .labelBotonAvanzar #btnAvanzar{
+
+    opacity: 0;
+    pointer-events: none;
+}
