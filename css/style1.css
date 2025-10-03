@@ -1,4 +1,4 @@
-/* Variables de colores - TEMA OSCURO */
+/* Variables de colores */
 :root {
     --primary: #8B5CF6;
     --primary-dark: #7C3AED;
@@ -61,7 +61,7 @@ body::before {
     padding: 0 2rem;
 }
 
-/* Header y Navegación - Estilo Glassmorphism */
+/* Header y Navegación - Estilo  */
 .header {
     background: rgba(26, 26, 35, 0.8);
     backdrop-filter: blur(20px);
