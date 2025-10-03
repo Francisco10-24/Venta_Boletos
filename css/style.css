@@ -1,12 +1,12 @@
 
 
-
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Overpass:ital,wght@0,100..900;1,100..900&family=Pinyon+Script&family=Unbounded:wght@200..900&display=swap');
 
 *
 {
     margin: 0;
     padding:0;
+    border: 0;
     list-style: none;
     text-decoration:none;
     box-sizing: border-box;
@@ -22,8 +22,8 @@ body{
     background-image: url(../IMG/tp238-background-03.jpg);
     background-repeat: no-repeat;
     background-position: center;
-
-    position: absolute;
+    background-size: cover;
+    position: fixed;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -34,11 +34,17 @@ body{
     
 }
 
+.destacado-bienvenida {
+    font-family: Unbounded, cursive; 
+    color: #d939be; 
+    
+}
+
 #unico h1{
     
     font-family: Unbounded;
     font-size: 75px;
-    color: aliceblue;
+    color: rgb(255, 255, 255);
     text-align: center;
     
 }
@@ -62,25 +68,38 @@ body{
 
 }
 
+#encabezado {
+    position: relative;
+    top: 0;
+    width: 100%;
+    background-color: #30334b;
+    margin: 0;
+    padding: 0;
+    border: 0;
+}
 
 .inicio{
-    position: absolute;      
+    position: relative;        
     top: 100vh;             
     left: 0;
     width: 100%;
-    height: 100vh;
-    background-color: #fff;  
-
-    /*z-index: 1;*/
+    background-color: #3f3a3a;  
     display: flex;
-    justify-content: center;
+    /*justify-content: center;*/
+    justify-content: flex-start;
     align-items: center;
-    overflow: hidden;
     transition: all 1s ease;
+    min-height: 100vh;
+
+
+    margin: 0;
+    padding: 0;
+    border: 0;
 }
 
 footer{
-    position: fixed;
+    /*position: fixed;*/
+    position: relative;
     bottom: -60px; 
     left: 0;
     width: 100%;
@@ -95,6 +114,7 @@ footer{
 
 #checkAvanzar:checked ~ .inicio{
     top: 0;
+    position: relative;
 
 }
 
@@ -114,3 +134,116 @@ footer{
     opacity: 0;
     pointer-events: none;
 }
+
+/*Parte de inicio*/
+
+.inicio{
+    display: flex;
+    flex-direction: column;   
+    justify-content: flex-start; 
+    align-items: center; 
+}
+
+
+nav{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    padding: 10px 20px;
+}
+
+nav ul{
+    display: flex;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+nav ul li{
+    margin-left: 20px;
+    padding: 0;
+    
+
+}
+
+nav ul li a{
+    text-decoration: none;
+    padding: 0.3em 0.5em;
+    display: block;
+    color: rgb(244, 241, 241);
+    font-family: Overpass;
+    font-size: 1.5em;
+}
+
+nav ul li a:hover{
+    color: #d939be;
+    transform: scale(1.25);
+}
+
+#textoEntrada{
+    justify-content: flex-start;
+}
+
+
+/*Carrusel*/
+
+.titulo-seccion {
+    text-align: center;
+    padding: 30px 20px;
+    background-color: #ffffff00;
+}
+
+.titulo-seccion h2 {
+    font-family: Unbounded;
+    font-size: 2.5em;
+    color: #e53bba;
+    margin-bottom: 10px;
+}
+
+.titulo-seccion p {
+    font-size: 1.2em;
+    color: #fffefe;
+}
+
+
+.carousel-item {
+    height: 500px; 
+    overflow: hidden;
+   
+}
+
+.carousel-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; 
+    object-position: center;
+}
+
+
+.bloques {
+  display: flex;
+  justify-content: space-around;
+  align-items: stretch;
+  width: 90%;
+  max-width: 1200px;
+  margin: 50px auto;
+  gap: 20px;
+}
+
+.bloque {
+  flex: 1;
+  background: #c0d7f2;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  padding: 30px;
+  text-align: center;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.bloque:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 12px rgba(0,0,0,0.15);
+}
+
