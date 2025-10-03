@@ -1,101 +1,339 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Ofertas - NextLab</title>
+    <link rel="stylesheet" href="css/style2.css">
 </head>
 <body>
-    <main>
-        <h1>Ofertas y Paquetes Especiales</h1>
-        <p>Descubre nuestras promociones exclusivas, descuentos y paquetes para vivir 
-            experiencias musicales únicas</p>
+    <header class="header">
+        <nav class="navbar">
+            <div class="logo">NextLab</div>
+            <ul class="nav-menu">
+                <li><a href="index.html" id="inicio">Inicio</a></li>
+                <li><a href="galeria.html" id="galeria">Galeria</a></li>
+                <li><a href="contacto.html" id="contacto">Contacto</a></li>
+                <li><a href="acerca.html" id="acerca-de">Acerca de</a></li>
+            </ul>
+        </nav>
+    </header>
 
-        <!--Promociones Destacadas-->
-        <section>
-            <h2>Promociones Destacadas</h2>
-            <div>
-                <div>
-                    <h3>2x1 en Entradas Generales</h3>
-                    <p>Válido para conciertos seleccionados de miércoles a viernes</p>
-                    <p><b>Válido hasta:</b> 30 de noviembre 2025</p>
-                    <p><b>Ahorra hasta:</b> $25 por persona</p>
-                    <button>Ver Conciertos Disponibles</button>
+    <main class="main-content">
+        <div class="container">
+            <!-- Hero Section -->
+            <section class="hero">
+                <h1 class="hero-title">Ofertas y Paquetes Especiales</h1>
+                <p class="hero-subtitle">Descubre nuestras promociones exclusivas, descuentos y paquetes para vivir experiencias musicales únicas</p>
+            </section>
+
+            <!-- Promociones Destacadas -->
+            <section class="promotions-section">
+                <h2 class="section-title">Promociones Destacadas</h2>
+                <div class="promotions-grid">
+                    <div class="promotion-card">
+                        <div class="promotion-badge popular">Popular</div>
+                        <h3>2x1 en Entradas Generales</h3>
+                        <p>Válido para conciertos seleccionados de miércoles a viernes</p>
+                        <div class="promotion-details">
+                            <p><strong>Válido hasta:</strong> 30 de noviembre 2025</p>
+                            <p><strong>Ahorra hasta:</strong> $25 por persona</p>
+                        </div>
+                        <button class="btn btn-primary">Ver Conciertos Disponibles</button>
+                    </div>
+
+                    <div class="promotion-card">
+                        <div class="promotion-badge student">Estudiantes</div>
+                        <h3>20% de Descuento Estudiantil</h3>
+                        <p>Presentando carnet de estudiante vigente</p>
+                        <div class="promotion-details">
+                            <p><strong>Válido para:</strong> Todos los conciertos</p>
+                            <p><strong>Descuento:</strong> 20% en cualquier entrada</p>
+                        </div>
+                        <button class="btn btn-primary">Obtener Descuento</button>
+                    </div>
+
+                    <div class="promotion-card">
+                        <div class="promotion-badge early">Early Bird</div>
+                        <h3>Early Bird Special</h3>
+                        <p>Compra durante la primera semana de preventa</p>
+                        <div class="promotion-details">
+                            <p><strong>Descuento:</strong> 15% en entradas VIP</p>
+                            <p><strong>Próxima preventa:</strong> Concierto de Rock Nacional - 15 dic</p>
+                        </div>
+                        <button class="btn btn-primary">Ver Preventas</button>
+                    </div>
                 </div>
+            </section>
 
-                <div>
-                    <h3>20% de Descuento Estudiantil</h3>
-                    <p>Presentando carnet de estudiante vigente</p>
-                    <p><b>Válido para:</b> Todos los conciertos</p>
-                    <p><b>Descuento:</b> 20% en cualquier entrada</p>
-                    <button>Obtener Descuento</button>
+            <!-- Paquetes Exclusivos -->
+            <section class="packages-section">
+                <h2 class="section-title">Paquetes Exclusivos</h2>
+                <div class="packages-grid">
+                    <div class="package-card">
+                        <div class="package-header">
+                            <h3>Paquete Experiencia VIP</h3>
+                            <p>Para los verdaderos amantes de la música</p>
+                        </div>
+                        <ul class="package-features">
+                            <li>Entrada VIP con acceso preferencial</li>
+                            <li>Meet & Greet con el artista</li>
+                            <li>Merchandising oficial del evento</li>
+                            <li>Bebidas ilimitadas</li>
+                            <li>Estacionamiento premium incluido</li>
+                        </ul>
+                        <div class="package-price">
+                            <span class="price-old">$200</span>
+                            <span class="price-new">$150</span>
+                        </div>
+                        <button class="btn btn-secondary">Seleccionar Paquete</button>
+                    </div>
+
+                    <div class="package-card featured">
+                        <div class="featured-badge">Más Popular</div>
+                        <div class="package-header">
+                            <h3>Paquete Romántico</h3>
+                            <p>Ideal para una cita musical inolvidable</p>
+                        </div>
+                        <ul class="package-features">
+                            <li>2 entradas en zona preferencial</li>
+                            <li>Cena para dos en restaurante asociado</li>
+                            <li>Transporte ida y vuelta incluido</li>
+                            <li>Rosa y chocolates de cortesía</li>
+                            <li>Fotografía profesional de la noche</li>
+                        </ul>
+                        <div class="package-price">
+                            <span class="price-old">$240</span>
+                            <span class="price-new">$180</span>
+                        </div>
+                        <button class="btn btn-secondary">Seleccionar Paquete</button>
+                    </div>
+
+                    <div class="package-card">
+                        <div class="package-header">
+                            <h3>Paquete Grupal</h3>
+                            <p>Perfecto para grupos de amigos o familia</p>
+                        </div>
+                        <ul class="package-features">
+                            <li>4 entradas generales</li>
+                            <li>1 botella de champagne</li>
+                            <li>Snacks exclusivos</li>
+                            <li>Fotografía grupal con marco conmemorativo</li>
+                            <li>Descuento del 25% en merchandising</li>
+                        </ul>
+                        <div class="package-price">
+                            <span class="price-old">$280</span>
+                            <span class="price-new">$200</span>
+                        </div>
+                        <button class="btn btn-secondary">Seleccionar Paquete</button>
+                    </div>
                 </div>
+            </section>
 
-                <div>
-                    <h3>Early Bird Special</h3>
-                    <p>Compra durante la primera semana de preventa</p>
-                    <p><b>Descuento:</b> 15% en entradas VIP</p>
-                    <p><b>Próxima preventa:</b> Concierto de Rock Nacional - 15 dic</p>
-                    <button>Ver Preventas</button>
+            <!-- Preventas Especiales -->
+            <section class="presales-section">
+                <h2 class="section-title">Preventas Exclusivas</h2>
+                <div class="presales-grid">
+                    <div class="presale-card">
+                        <div class="presale-icon">👑</div>
+                        <h3>Preventa para Socios</h3>
+                        <p>Acceso exclusivo 48 horas antes del público general</p>
+                        <div class="presale-details">
+                            <p><strong>Requisito:</strong> Ser miembro del Club NextLab</p>
+                            <p><strong>Próxima preventa:</strong> Festival de Verano 2025</p>
+                        </div>
+                        <button class="btn btn-outline">Unirse al Club</button>
+                    </div>
+
+                    <div class="presale-card">
+                        <div class="presale-icon">💳</div>
+                        <h3>Preventa con Tarjeta de Crédito</h3>
+                        <p>Clientes de bancos asociados tienen acceso prioritario</p>
+                        <div class="presale-details">
+                            <p><strong>Bancos participantes:</strong> Banco Agrícola, Scotiabank, BAC</p>
+                            <p><strong>Beneficio:</strong> 6 meses sin intereses</p>
+                        </div>
+                        <button class="btn btn-outline">Ver Bancos Participantes</button>
+                    </div>
+
+                    <div class="presale-card">
+                        <div class="presale-icon">🎵</div>
+                        <h3>Preventa para Fanáticos</h3>
+                        <p>Regístrate en nuestra lista de fanáticos para acceso prioritario</p>
+                        <div class="presale-details">
+                            <p><strong>Artistas disponibles:</strong> Todos los artistas internacionales</p>
+                            <p><strong>Ventaja:</strong> Mejores ubicaciones garantizadas</p>
+                        </div>
+                        <button class="btn btn-outline">Registrarse</button>
+                    </div>
                 </div>
-            </div>
-        </section>
+            </section>
 
-        <!--Paquetes Exclusivos-->
-        <section>
-            <h2>Paquetes Exclusivos</h2>
-            <div>
-                <div>
-                    <h3>Paquete Experiencia VIP</h3>
-                    <p>Para los verdaderos amantes de la musica</p>
-                    <ul>
-                        <li>Entrada VIP con acceso preferencia</li>
-                        <li>Meet & Greet con el artista</li>
-                        <li>Merchandising oficial del evento</li>
-                        <li>Bebidas ilimitadas</li>
-                        <li>Estacionamiento premium incluido</li>
+            <!-- Descuentos por Temporada -->
+            <section class="seasonal-section">
+                <h2 class="section-title">Ofertas de Temporada</h2>
+                <div class="seasonal-grid">
+                    <div class="seasonal-card">
+                        <div class="seasonal-icon">☀️</div>
+                        <h3>Verano Musical</h3>
+                        <p>Disfruta del calor con los mejores conciertos</p>
+                        <div class="seasonal-details">
+                            <p><strong>Válido:</strong> Junio - Agosto 2024</p>
+                            <p><strong>Descuento:</strong> 30% en conciertos al aire libre</p>
+                        </div>
+                        <button class="btn btn-primary">Ver Conciertos de Verano</button>
+                    </div>
+
+                    <div class="seasonal-card">
+                        <div class="seasonal-icon">🎄</div>
+                        <h3>Navidad en Concierto</h3>
+                        <p>Celebra las fiestas con música en vivo</p>
+                        <div class="seasonal-details">
+                            <p><strong>Válido:</strong> Diciembre 2024</p>
+                            <p><strong>Promoción:</strong> 2da entrada a mitad de precio</p>
+                        </div>
+                        <button class="btn btn-primary">Ver Eventos Navideños</button>
+                    </div>
+
+                    <div class="seasonal-card">
+                        <div class="seasonal-icon">🎉</div>
+                        <h3>Aniversario NextLab</h3>
+                        <p>Celebramos 3 años contigo</p>
+                        <div class="seasonal-details">
+                            <p><strong>Válido:</strong> Todo el mes de octubre</p>
+                            <p><strong>Sorpresa:</strong> Descuentos progresivos hasta 40%</p>
+                        </div>
+                        <button class="btn btn-primary">Descubrir Ofertas</button>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Membresías -->
+            <section class="membership-section">
+                <h2 class="section-title">Programas de Membresía</h2>
+                <div class="membership-grid">
+                    <div class="membership-card">
+                        <div class="membership-header">
+                            <h3>Club NextLab Básico</h3>
+                            <p class="membership-price">Gratuito</p>
+                        </div>
+                        <p class="membership-description">Ideal para fanáticos ocasionales</p>
+                        <ul class="membership-features">
+                            <li>Newsletter con ofertas exclusivas</li>
+                            <li>Acceso a preventas generales</li>
+                            <li>5% de descuento en todas las compras</li>
+                            <li>Recordatorios de eventos favoritos</li>
+                        </ul>
+                        <button class="btn btn-outline">Unirse Gratis</button>
+                    </div>
+
+                    <div class="membership-card featured">
+                        <div class="featured-badge">Recomendado</div>
+                        <div class="membership-header">
+                            <h3>Club NextLab Premium</h3>
+                            <p class="membership-price">$50 anuales</p>
+                        </div>
+                        <p class="membership-description">Para los verdaderos melómanos</p>
+                        <ul class="membership-features">
+                            <li>Todos los beneficios del plan básico</li>
+                            <li>Acceso prioritario 72 horas antes</li>
+                            <li>15% de descuento en todas las compras</li>
+                            <li>1 entrada gratis en tu cumpleaños</li>
+                            <li>Descuentos en restaurantes asociados</li>
+                            <li>Soporte personalizado</li>
+                        </ul>
+                        <button class="btn btn-secondary">Suscribirse</button>
+                    </div>
+
+                    <div class="membership-card">
+                        <div class="membership-header">
+                            <h3>Club NextLab Empresas</h3>
+                            <p class="membership-price">Personalizado</p>
+                        </div>
+                        <p class="membership-description">Para equipos y clientes corporativos</p>
+                        <ul class="membership-features">
+                            <li>Descuentos para grupos desde 10 personas</li>
+                            <li>Asignación de ejecutivo de cuenta</li>
+                            <li>Paquetes personalizados para eventos</li>
+                            <li>Facturación corporativa</li>
+                            <li>Espacios VIP para networking</li>
+                        </ul>
+                        <button class="btn btn-outline">Contactar Ventas</button>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Cómo Funciona -->
+            <section class="how-it-works-section">
+                <h2 class="section-title">Cómo Obtener Nuestras Ofertas</h2>
+                <div class="steps-grid">
+                    <div class="step-card">
+                        <div class="step-number">1</div>
+                        <h3>Explora</h3>
+                        <p>Revisa todas nuestras ofertas y paquetes disponibles</p>
+                    </div>
+
+                    <div class="step-card">
+                        <div class="step-number">2</div>
+                        <h3>Selecciona</h3>
+                        <p>Elige la promoción que mejor se adapte a tus necesidades</p>
+                    </div>
+
+                    <div class="step-card">
+                        <div class="step-number">3</div>
+                        <h3>Aplica</h3>
+                        <p>Utiliza el código de descuento o selecciona el paquete al comprar</p>
+                    </div>
+
+                    <div class="step-card">
+                        <div class="step-number">4</div>
+                        <h3>Disfruta</h3>
+                        <p>Presenta tu comprobante en el evento y vive la experiencia</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Términos y Condiciones -->
+            <section class="terms-section">
+                <h2 class="section-title">Términos y Condiciones</h2>
+                <div class="terms-content">
+                    <ul class="terms-list">
+                        <li>Las ofertas no son acumulables con otras promociones</li>
+                        <li>Los descuentos aplican solo en compras online</li>
+                        <li>Cupos limitados para cada promoción</li>
+                        <li>Válido solo para eventos seleccionados</li>
+                        <li>No reembolsable ni transferible</li>
+                        <li>NextLab Concerts se reserva el derecho de modificar las promociones</li>
                     </ul>
-                    <p> <b>Precio: </b> $150 (valor normal $200)</p>
-                    <button>Seleccionar Paquete</button>
                 </div>
-
-                 <div>
-                    <h3>Paquete Romántico</h3>
-                    <p>Ideal para una cita musical inolvidable</p>
-                    <ul>
-                        <li>2 entradas en zona preferencial</li>
-                        <li>Cena para dos en restaurante asociado</li>
-                        <li>Transporte ida y vuelta incluido</li>
-                        <li>Rosa y chocolates de cortesía</li>
-                        <li>Fotografía profesional de la noche</li>
-                    </ul>
-                    <p><b>Precio:</b> $180 (valor normal $240)</p>
-                    <button>Seleccionar Paquete</button>
-                </div>
-
-                <div>
-                    <h3>Paquete Grupal</h3>
-                    <p>Perfecto para grupos de amigos o familia</p>
-                    <ul>
-                        <li>4 entradas generales</li>
-                        <li>1 botella de champagne</li>
-                        <li>Snacks exclusivos</li>
-                        <li>Fotografía grupal con marco conmemorativo</li>
-                        <li>Descuento del 25% en merchandising</li>
-                    </ul>
-                    <p><b>Precio:</b> $200 (valor normal $280)</p>
-                    <button>Seleccionar Paquete</button>
-                </div>
-
-
-            </div>
-
-            
-        </section>
-        
-
-
-
+            </section>
+        </div>
     </main>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-info">
+                    <h3>NextLab Concerts</h3>
+                    <p>Tu plataforma para experiencias musicales inolvidables.</p>
+                </div>
+                <div class="footer-links">
+                    <h4>Enlaces Rápidos</h4>
+                    <ul>
+                        <li><a href="conciertos.html">Conciertos</a></li>
+                        <li><a href="calendario.html">Calendario</a></li>
+                        <li><a href="ofertas.html">Ofertas</a></li>
+                    </ul>
+                </div>
+                <div class="footer-contact">
+                    <h4>Contacto</h4>
+                    <p>info@nextlab.com<br>+503 1234-5678</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 NextLab Concerts. Todos los derechos reservados.</p>
+            </div>
+        </div>
+    </footer>
 </body>
 </html>
