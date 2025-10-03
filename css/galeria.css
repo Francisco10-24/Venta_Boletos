@@ -1,0 +1,129 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Overpass:ital,wght@0,100..900;1,100..900&family=Pinyon+Script&family=Unbounded:wght@200..900&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    list-style: none;
+    text-decoration: none;
+    box-sizing: border-box;
+
+}
+
+body {
+    font-family: Overpass;
+    font-size: 12px;
+    margin: 0;
+    padding: 0;
+}
+
+/* Menu*/
+
+#encabezado {
+    position: relative;
+    top: 0;
+    width: 100%;
+    background-color: #30334b;
+    margin: 0;
+    padding: 0;
+    border: 0;
+}
+
+
+nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    padding: 10px 20px;
+}
+
+nav ul {
+    display: flex;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+nav ul li {
+    margin-left: 20px;
+    padding: 0;
+
+
+}
+
+nav ul li a {
+    text-decoration: none;
+    padding: 0.3em 0.5em;
+    display: block;
+    color: rgb(244, 241, 241);
+    font-family: Overpass;
+    font-size: 1.5em;
+}
+
+nav ul li a:hover {
+    color: #d939be;
+    transform: scale(1.25);
+}
+
+/*Galeria*/
+.contenido {
+    background-image: url(../IMG/tp238-background-03.jpg);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+}
+
+.galeria {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+    padding: 20px;
+}
+
+.galeria .concierto {
+    flex: 1 1 calc(33.3% - 30px);
+    max-width: 390px;
+    background: #011B28;
+    padding: 10px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+.concierto img {
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
+    margin-bottom: 10px;
+    border-radius: 10px;
+}
+
+.concierto h3 {
+    padding: 5px;
+    font-size: 1.2em;
+    color: #fff;
+}
+
+.concierto p {
+    padding: 5px;
+    font-size: 1em;
+    color: #ccc;
+}
+
+/*Footer*/
+footer {
+    /*position: fixed;*/
+    position: relative;
+    left: 0;
+    width: 100%;
+    height: 60px;
+    background-color: #042331;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: all 1s ease;
+}
