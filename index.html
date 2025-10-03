@@ -5,64 +5,137 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Venta de Boletos de Conciertos</title>
     <link rel="stylesheet" href="css/style.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+</head>
 </head>
 <body>
-    <header>
-        <nav class="navbar">
-            <div class="logo">
-                <h1>Next algo dijiste</h1>
-            </div>
-            <ul class="nav-links">
-                <li><a href="index.html">Inicio</a></li>
-                <li><a href="galeria.html">Camara</a></li>
-                <li><a href="contacto.html">Contactanos</a></li>
-                <li><a href="acerca.html">Acerca de </a></li>
-            </ul>
-        </nav>
-    </header>
+<input type="checkbox" name="checkAvanzar" id="checkAvanzar">
+<label for="checkAvanzar" class="labelBotonAvanzar">
+    <i class="fa fa-navicon" id="btnAvanzar"></i>
+</label>
 
-    <main>
-        <section class="hero">
-            <div class="hero-content">
-                <h2>Conciertos Destacados</h2>
-                <p>Encuentra los mejores eventos y compra tus boletos fácilmente</p>
-                <button class="cta-button">Ver Eventos</button>
-            </div>
-        </section>
+<section id="bienvenida">
+    <div id="unico">
+        <h1>¿LISTO PARA VIVIR TU <span class="destacado-bienvenida">PROXIMA</span> EXPERIENCIA?</h1>
+    </div>    
+</section>
 
-        <section class="featured-events">
-            <h2>Eventos en Tendencia</h2>
-            <div class="events-grid">
-                <div class="event-card">
-                    <div class="event-image"></div>
-                    <h3> Bad Bunny</h3>
-                    <p>Fecha: Próximamente</p>
-                    <button>Comprar Boletos</button>
-                </div>
-                <div class="event-card">
-                    <div class="event-image"></div>
-                    <h3> Rauw Alejandro/h3>
-                    <p>Fecha: Próximamente</p>
-                    <button>Comprar Boletos</button>
-                </div>
-                <div class="event-card">
-                    <div class="event-image"></div>
-                    <h3> Alvaro Diaz </h3>
-                    <p>Fecha: Próximamente</p>
-                    <button>Comprar Boletos</button>
-                </div>
-                <div class="event-card">
-                    <div class="event-image"></div>
-                    <h3> Omar Courtz </h3>
-                    <p>Fecha: Próximamente</p>
-                    <button>Comprar Boletos</button>
-                </div>
-            </div>
-        </section>
-    </main>
+<div id="encabezado">
+        <nav>
+                <img src="IMG/logo.png" alt="Logo NextLab" width="200" height="54" id="logo">
+                <ul>
+                    <li><a href="index.html" id="inicio">Inicio</a></li>
+                    <li><a href="galeria.html" id="galeria">Galeria</a></li>
+                    <li><a href="contacto.html" id="contacto">Contacto</a></li>
+                    <li><a href="acerca.html" id="Acerca-de">Acerca de</a></li>
+                </ul>
 
-    <footer>
-        <p>&copy; 2025 Venta de Boletos de Conciertos. Todos los derechos reservados.</p>
-    </footer>
+            </nav>
+
+    </div>
+
+    <div id="carouselId" class="carousel slide" data-bs-ride="carousel">
+         <div class="titulo-seccion">
+        <h2>PRÓXIMOS CONCIERTOS</h2>
+        <p>No te pierdas los eventos más esperados</p>
+    </div>
+    
+
+        <ol class="carousel-indicators">
+            <li
+                data-bs-target="#carouselId"
+                data-bs-slide-to="0"
+                class="active"
+                aria-current="true"
+                aria-label="First slide"
+            ></li>
+            <li
+                data-bs-target="#carouselId"
+                data-bs-slide-to="1"
+                aria-label="Second slide"
+            ></li>
+            <li
+                data-bs-target="#carouselId"
+                data-bs-slide-to="2"
+                aria-label="Third slide"
+            ></li>
+        </ol>
+        <div class="carousel-inner" role="listbox">
+            <div class="carousel-item active">
+                <img
+                    src="IMG/bad.png"
+                    class="w-100 d-block"
+                    alt="First slide"
+                />
+        
+            </div>
+            <div class="carousel-item">
+                <img
+                    src="IMG/ousi.png"
+                    class="w-100 d-block"
+                    alt="Second slide"
+                />
+            </div>
+            <div class="carousel-item">
+                <img
+                    src="IMG/rawi.png"
+                    class="w-100 d-block"
+                    alt="Third slide"
+                />
+
+            </div>
+        </div>
+        <button
+            class="carousel-control-prev"
+            type="button"
+            data-bs-target="#carouselId"
+            data-bs-slide="prev"
+        >
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Previous</span>
+        </button>
+        <button
+            class="carousel-control-next"
+            type="button"
+            data-bs-target="#carouselId"
+            data-bs-slide="next"
+        >
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Next</span>
+        </button>
+    </div>
+
+    <div class="bloques">
+        <div class="bloque">
+      <h3>🎤 Conciertos Destacados</h3>
+      <p>Descubre los eventos más esperados de la temporada.</p>
+      <a href="conciertos.html">Ver más</a>
+    </div>
+
+    <div class="bloque">
+      <h3>📅 Calendario de Eventos</h3>
+      <p>Revisa todos los conciertos programados y planifica tu experiencia.</p>
+      <a href="calenario.html">Ver calendario</a>
+    </div>
+
+    <div class="bloque">
+      <h3>💥 Ofertas y Paquetes</h3>
+      <p>Aprovecha promociones exclusivas en boletos y combos especiales.</p>
+      <a href="ofertas.html">Ver ofertas</a>
+    </div>
+    </div>
+    
+
+
+</section>
+
+
+  <footer>
+    <p> &copy; 2025 NextLab. Todos los derechos reservados.</p>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
+    
+  
 </body>
 </html>
