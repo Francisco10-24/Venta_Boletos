@@ -35,7 +35,7 @@ body {
 .galeria .concierto {
     flex: 1 1 calc(33.3% - 30px);
     max-width: 390px;
-    background: #011B28;
+    background: #1b1b1b;
     padding: 10px;
     border-radius: 10px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
@@ -60,4 +60,85 @@ body {
     padding: 5px;
     font-size: 1em;
     color: #ccc;
+}
+
+/* Pantallas grandes (desktops, 1200px en adelante) */
+@media (min-width: 1200px) {
+    .galeria .concierto {
+        flex: 1 1 calc(25% - 30px);
+        /* 4 columnas en pantallas grandes */
+        max-width: calc(25% - 30px);
+    }
+
+    .concierto h3 {
+        font-size: 1.4em;
+    }
+
+    .concierto p {
+        font-size: 1.1em;
+    }
+}
+
+/* Pantallas medianas (tablets, 768px a 1199px) */
+@media (min-width: 768px) and (max-width: 1199px) {
+    .galeria .concierto {
+        flex: 1 1 calc(50% - 30px);
+        /* 2 columnas en tablets */
+        max-width: calc(50% - 30px);
+    }
+
+    .concierto img {
+        height: 280px;
+        /* Imágenes un poco más grandes */
+    }
+
+    .concierto h3 {
+        font-size: 1.3em;
+    }
+
+    .concierto p {
+        font-size: 1.05em;
+    }
+
+    .galeria {
+        gap: 25px;
+        padding: 25px;
+    }
+}
+
+/* Pantallas grandes (desktops, 1200px en adelante) */
+@media (min-width: 1200px) {
+    .galeria .concierto {
+        flex: 1 1 calc(33.333% - 30px);
+        /* 3 columnas exactas */
+        max-width: calc(33.333% - 30px);
+    }
+}
+
+/* Pantallas medianas (tablets, 768px a 1199px) */
+@media (min-width: 768px) and (max-width: 1199px) {
+    .galeria .concierto {
+        flex: 1 1 calc(33.333% - 20px);
+        /* 3 columnas en tablets */
+        max-width: calc(33.333% - 20px);
+    }
+
+    .galeria {
+        gap: 20px;
+        padding: 20px;
+    }
+}
+
+/* Pantallas pequeñas (móviles, hasta 767px) */
+@media (max-width: 767px) {
+    .galeria .concierto {
+        flex: 1 1 calc(50% - 15px);
+        /* 2 columnas en móviles */
+        max-width: calc(50% - 15px);
+    }
+
+    .galeria {
+        gap: 15px;
+        padding: 15px;
+    }
 }

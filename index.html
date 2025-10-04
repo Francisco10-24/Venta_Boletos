@@ -1,13 +1,13 @@
-
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Venta de boletos</title>
-    <link rel="stylesheet" href="CSS/style.css">
-    <link rel="stylesheet" href="CSS/header_footer.css">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+    <title>NextLab - Inicio</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/header_footer.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
 </head>
 <body class="dark-theme">
 
@@ -18,110 +18,120 @@
                 <li><a href="index.html" id="inicio">Inicio</a></li>
                 <li><a href="galeria.html" id="galeria">Galeria</a></li>
                 <li><a href="contacto.html" id="contacto">Contacto</a></li>
-                <li><a href="acerca.html" id="Acerca-de">Acerca de</a></li>
+                <li><a href="acerca.html" id="acerca-de">Acerca de</a></li>
             </ul>
-
         </nav>
     </header>
 
-    <div id="carouselId" class="carousel slide" data-bs-ride="carousel">
-        <div class="titulo-seccion">
-        <h2>PRÓXIMOS CONCIERTOS</h2>
-        <p>No te pierdas los eventos más esperados</p>
-    </div>
-        
-    
-        <ol class="carousel-indicators">
-            <li
-                data-bs-target="#carouselId"
-                data-bs-slide-to="0"
-                class="active"
-                aria-current="true"
-                aria-label="First slide"
-            ></li>
-            <li
-                data-bs-target="#carouselId"
-                data-bs-slide-to="1"
-                aria-label="Second slide"
-            ></li>
-            <li
-                data-bs-target="#carouselId"
-                data-bs-slide-to="2"
-                aria-label="Third slide"
-            ></li>
-        </ol>
-        <div class="carousel-inner" role="listbox">
-            <div class="carousel-item active">
-                <img
-                    src="IMG/bad.png"
-                    class="w-100 d-block"
-                    alt="First slide"
-                />
+    <main class="main-content">
+        <!-- Próximos Conciertos -->
+        <section class="concerts-section">
+            <div class="container">
+                <div class="section-header">
+                    <h2 class="section-title">PRÓXIMOS CONCIERTOS</h2>
+                    <p class="section-subtitle">No te pierdas los eventos más esperados</p>
+                </div>
+
+                <div id="carouselId" class="carousel slide" data-bs-ride="carousel">
+                    <ol class="carousel-indicators">
+                        <li data-bs-target="#carouselId" data-bs-slide-to="0" class="active" aria-current="true"
+                            aria-label="First slide"></li>
+                        <li data-bs-target="#carouselId" data-bs-slide-to="1" aria-label="Second slide"></li>
+                        <li data-bs-target="#carouselId" data-bs-slide-to="2" aria-label="Third slide"></li>
+                    </ol>
+                    <div class="carousel-inner" role="listbox">
+                        <div class="carousel-item active">
+                            <img src="IMG/bad.png" class="w-100 d-block" alt="Concierto Bad Bunny" />
+                            <div class="carousel-caption">
+                                <h3>BAD BUNNY</h3>
+                                <p>Vive una noche llena de energía y ritmo</p>
+                            </div>
+                        </div>
+                        <div class="carousel-item">
+                            <img src="IMG/ousi.png" class="w-100 d-block" alt="Concierto Ousi" />
+                            <div class="carousel-caption">
+                                <h3>OUSI</h3>
+                                <p>Experiencia musical única</p>
+                            </div>
+                        </div>
+                        <div class="carousel-item">
+                            <img src="IMG/rawi.png" class="w-100 d-block" alt="Concierto Rawi" />
+                            <div class="carousel-caption">
+                                <h3>RAWI</h3>
+                                <p>Lo mejor de la música urbana</p>
+                            </div>
+                        </div>
+                    </div>
+                    <button class="carousel-control-prev" type="button" data-bs-target="#carouselId" data-bs-slide="prev">
+                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                        <span class="visually-hidden">Previous</span>
+                    </button>
+                    <button class="carousel-control-next" type="button" data-bs-target="#carouselId" data-bs-slide="next">
+                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                        <span class="visually-hidden">Next</span>
+                    </button>
+                </div>
             </div>
-            <div class="carousel-item">
-                <img
-                    src="IMG/ousi.png"
-                    class="w-100 d-block"
-                    alt="Second slide"
-                />
+        </section>
+
+        <!-- Bloques de Servicios -->
+        <section class="services-section">
+            <div class="container">
+                <div class="services-grid">
+                    <div class="service-card">
+                        <div class="service-icon">🎤</div>
+                        <h3>Conciertos Destacados</h3>
+                        <p>Descubre los eventos más esperados de la temporada con los artistas más populares.</p>
+                        <div class="service-image">
+                            <img src="IMG/concierto.png" alt="Conciertos">
+                        </div>
+                        <a href="conciertos.html" class="btn btn-primary">Ver más</a>
+                    </div>
+
+                    <div class="service-card">
+                        <div class="service-icon">📅</div>
+                        <h3>Calendario de Eventos</h3>
+                        <p>Revisa todos los conciertos programados y planifica tu experiencia musical perfecta.</p>
+                        <div class="service-image">
+                            <img src="IMG/calendario.png" alt="Calendario">
+                        </div>
+                        <a href="calendario.html" class="btn btn-primary">Ver calendario</a>
+                    </div>
+
+                    <div class="service-card">
+                        <div class="service-icon">💥</div>
+                        <h3>Ofertas y Paquetes</h3>
+                        <p>Aprovecha promociones exclusivas en boletos y combos especiales para vivir experiencias únicas.</p>
+                        <div class="service-image">
+                            <img src="IMG/ofertas.png" alt="Ofertas">
+                        </div>
+                        <a href="ofertas.html" class="btn btn-primary">Ver ofertas</a>
+                    </div>
+                </div>
             </div>
-            <div class="carousel-item">
-                <img
-                    src="IMG/rawi.png"
-                    class="w-100 d-block"
-                    alt="Third slide"
-                />
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-info">
+                    <h3>NextLab Concerts</h3>
+                    <p>Tu plataforma para experiencias musicales inolvidables.</p>
+                </div>
+                <div class="footer-contact">
+                    <h4>Contacto</h4>
+                    <p>info@nextlab.com<br>+503 2374-5678</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 NextLab Concerts. Todos los derechos reservados.</p>
             </div>
         </div>
-        <button
-            class="carousel-control-prev"
-            type="button"
-            data-bs-target="#carouselId"
-            data-bs-slide="prev"
-        >
-            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-            <span class="visually-hidden">Previous</span>
-        </button>
-        <button
-            class="carousel-control-next"
-            type="button"
-            data-bs-target="#carouselId"
-            data-bs-slide="next"
-        >
-            <span class="carousel-control-next-icon" aria-hidden="true"></span>
-            <span class="visually-hidden">Next</span>
-        </button>
-    </div>
-    
-    <section class="bloques">
-         <div class="bloque">
-      <h3>🎤 Conciertos Destacados</h3>
-      <p>Descubre los eventos más esperados de la temporada.</p>
-      <img src="IMG/concierto.png" alt="">
-      <a href="conciertos.html">Ver más</a>
-    </div>
+    </footer>
 
-    <div class="bloque">
-      <h3>📅 Calendario de Eventos</h3>
-      <p>Revisa todos los conciertos programados y planifica tu experiencia.</p>
-      <img src="IMG/calendario.png" alt="">
-      <a href="calenario.html">Ver calendario</a>
-    </div>
-
-    <div class="bloque">
-      <h3>💥 Ofertas y Paquetes</h3>
-      <p>Aprovecha promociones exclusivas en boletos y combos especiales.</p>
-      <img src="IMG/ofertas.png" alt="">
-      <a href="ofertas.html">Ver ofertas</a>
-    </div>
-    </section>
-
-
-    <footer>
-    <p> &copy; 2025 NextLab. Todos los derechos reservados.</p>
-  </footer>
-    
-
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
+        crossorigin="anonymous"></script>
 </body>
 </html>
