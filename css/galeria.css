@@ -19,8 +19,8 @@ body {
 
 /*Galeria*/
 .contenido {
-    background: #001db0;
-    background: radial-gradient(circle, rgba(0, 29, 176, 1) 0%, rgba(222, 42, 78, 1) 100%);
+    background: #0a0a4a;
+    background: radial-gradient(circle,rgba(10, 10, 74, 1) 0%, rgba(20, 4, 4, 1) 100%);
 }
 
 .galeria {
@@ -40,7 +40,16 @@ body {
     border-radius: 10px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     text-align: center;
+    transition: all 0.3s;
+    
 }
+
+.galeria .concierto:hover {
+    
+    transform: scale(1.05);
+     box-shadow: 0 0 15px rgba(170, 166, 168, 0.2);
+}
+
 
 .concierto img {
     width: 100%;
@@ -53,7 +62,8 @@ body {
 .concierto h3 {
     padding: 5px;
     font-size: 1.2em;
-    color: #fff;
+    font-family: Unbounded;
+    color: #cd31a9;
 }
 
 .concierto p {
