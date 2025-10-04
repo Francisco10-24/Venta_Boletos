@@ -1,0 +1,46 @@
+
+/* --- HEADER --- */
+header {
+  background: #111; 
+  padding: 15px 30px;
+  border-bottom: 2px solid #e60073; 
+}
+
+header nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+header nav ul {
+  display: flex;
+  gap: 25px;
+  list-style: none;
+}
+
+header nav ul li a {
+  color: #fff;
+  text-decoration: none;
+  font-weight: 600;
+  border-bottom: 2px solid transparent; 
+  transition: border-color 0.3s, color 0.3s;
+}
+
+header nav ul li a:hover {
+  color: #e60073;                 
+  border-bottom: 2px solid #e60073; 
+}
+
+/* --- FOOTER --- */
+footer {
+  background: #111;
+  padding: 20px;
+  text-align: center;
+  border-top: 2px solid #e60073;
+}
+
+footer p {
+  color: #aaa;
+  font-size: 0.9rem;
+  font-family: 'Overpass', sans-serif;
+}
