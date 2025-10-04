@@ -12,7 +12,7 @@ header {
 }
 
 .CuadroCentral {
-    background-image: url(/ProyectoConciertos/Img/Concierto.jpg);
+    background-image: url(IMG/Concierto.jpg);
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
