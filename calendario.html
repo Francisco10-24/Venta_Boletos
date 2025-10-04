@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calendario de Eventos</title>
+    <link rel="stylesheet" href="css/header_footer.css">
+    <link rel="stylesheet" href="css/calendario.css">
+</head>
+
+<body>
+    <header id="encabezado">
+        <nav>
+            <img src="IMG/logo.png" alt="Logo NextLab" width="200" height="54" id="logo">
+            <ul>
+                <li><a href="index.html" id="inicio">Inicio</a></li>
+                <li><a href="galeria.html" id="galeria">Galeria</a></li>
+                <li><a href="contacto.html" id="contacto">Contacto</a></li>
+                <li><a href="acerca.html" id="Acerca-de">Acerca de</a></li>
+            </ul>
+
+        </nav>
+    </header>
+
+    <section class="busqueda">
+        <h1>Calendario de Conciertos - Octubre 2025 (El Salvador)</h1>
+        <form>
+            <input type="date" name="fecha">
+            <input type="text" placeholder="Ciudad">
+            <input type="text" placeholder="Artista">
+            <button class="btn" type="submit">Buscar</button>
+        </form>
+    </section>
+
+    <div class="calendario">
+        <div class="calendario-header">
+            <button class="btn">&lt;</button>
+            <h2>Octubre 2025</h2>
+            <button class="btn">&gt;</button>
+        </div>
+
+        <div class="dias">
+            <div>Lun</div>
+            <div>Mar</div>
+            <div>Mié</div>
+            <div>Jue</div>
+            <div>Vie</div>
+            <div>Sáb</div>
+            <div>Dom</div>
+        </div>
+
+        <div class="fechas">
+            <!-- Semana 1 -->
+            <div class="fecha"></div>
+            <div class="fecha"></div>
+            <div class="fecha">1</div>
+            <div class="fecha">2</div>
+            <div class="fecha">3 <span>—</span></div>
+            <div class="fecha evento">4 <span>Guns N’ Roses</span></div>
+            <div class="fecha">5</div>
+
+            <!-- Semana 2 -->
+            <div class="fecha">6</div>
+            <div class="fecha">7</div>
+            <div class="fecha">8</div>
+            <div class="fecha">9</div>
+            <div class="fecha evento">10 <span>Danny Ocean</span></div>
+            <div class="fecha evento">11 <span>Fonseca / Nanpa Básico</span></div>
+            <div class="fecha">12</div>
+
+            <!-- Semana 3 -->
+            <div class="fecha">13</div>
+            <div class="fecha">14</div>
+            <div class="fecha">15</div>
+            <div class="fecha">16</div>
+            <div class="fecha evento">17 <span>Juanes</span></div>
+            <div class="fecha">18</div>
+            <div class="fecha">19</div>
+
+            <!-- Semana 4 -->
+            <div class="fecha">20</div>
+            <div class="fecha">21</div>
+            <div class="fecha">22</div>
+            <div class="fecha">23</div>
+            <div class="fecha evento">24 <span>Omar Courtz / Carín León</span></div>
+            <div class="fecha">25</div>
+            <div class="fecha">26</div>
+
+            <!-- Semana 5 -->
+            <div class="fecha">27</div>
+            <div class="fecha">28</div>
+            <div class="fecha">29</div>
+            <div class="fecha">30</div>
+            <div class="fecha">31</div>
+
+        </div>
+    </div>
+
+    <footer>
+        <p> &copy; 2025 NextLab. Todos los derechos reservados.</p>
+    </footer>
+</body>
+
+</html>
