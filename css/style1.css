@@ -385,6 +385,13 @@ section {
     transition: all 0.3s ease;
 }
 
+.member-photo img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* ← Esto evita que se zoomee */
+    border-radius: 50%;
+}
+
 .team-card:hover .member-photo {
     transform: scale(1.05);
     box-shadow: 0 12px 35px rgba(139, 92, 246, 0.4);
