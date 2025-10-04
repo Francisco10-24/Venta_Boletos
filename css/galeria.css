@@ -35,7 +35,7 @@ body {
 .galeria .concierto {
     flex: 1 1 calc(33.3% - 30px);
     max-width: 390px;
-    background: #011B28;
+    background: #1b1b1b;
     padding: 10px;
     border-radius: 10px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
