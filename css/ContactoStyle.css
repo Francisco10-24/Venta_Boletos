@@ -118,7 +118,7 @@ input:focus, select:focus, textarea:focus {
     }
 }
 
-@media (max-width:1024px){
+@media (max-width:768px){
 
     .CuadroCentral{
         padding: 16px;
