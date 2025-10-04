@@ -4,7 +4,7 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: Overpass;
+    font-family: Montserrat, Overpass;
     color: white;
 }
 
@@ -15,9 +15,11 @@
     padding-right: 25px;
     padding-bottom: 0px;
     color: #FF13F0;
-    font-size: 30px;
-    font-family: Unbounded;
+    font-size: 50px;
+    font-family: Montserrat;
 }
+
+
 
 .Tendencia h2 {
     text-align: center;
@@ -38,9 +40,15 @@
     height: auto;
     margin: 15px auto;
     border-radius: 14px;
-    border: 2px solid white;
+    border: 2px solid rgb(123, 116, 116);
     cursor: pointer;
+    transition: all 0.5s;
 }
+
+.Tendencia img:hover{
+    transform: scale(1.05);
+}
+
 
 .Tendencia, .ProximosEventos {
     text-align: center;
@@ -54,7 +62,7 @@
     padding-bottom: 0px;
     color: #FF13F0;
     font-size: 30px;
-    font-family: Unbounded;
+    font-family: Montserrat;
 }
 
 .ProximosEventos img {
@@ -66,8 +74,13 @@
     object-fit: cover;
     object-position: center;
     border-radius: 14px;
-    border: 2px solid white;
+    border: 2px solid rgb(115, 102, 102);
     cursor: pointer;
+    transition: all 0.5s;
+}
+
+.ProximosEventos img:hover{
+    transform: scale(1.05);
 }
 
 .GirasImportantes {
@@ -84,7 +97,7 @@
     padding-bottom: 0px;
     color: #FF13F0;
     font-size: 30px;
-    font-family: Unbounded;
+    font-family: Montserrat;
     text-align: center;
     grid-column: 1/-1;
 }
@@ -92,10 +105,15 @@
 .GirasImportantes > div {
     text-align: center;
     background-color: #0F1021 ;
-    border: 1px solid white;
+    border: 1px solid rgba(180, 171, 171, 0.568);
     border-radius: 14px;
     padding: 30px;
-    cursor: pointer
+    cursor: pointer;
+    transition: all 0.5s;
+}
+
+.GirasImportantes > div:hover{
+    transform: scale(1.05);
 }
 
 .BotonFake {
@@ -109,6 +127,13 @@
     border-radius: 14px;
     font-weight: 700;
     text-decoration: none;
+    transition: all 0.5s;
+}
+
+.BotonFake:hover{
+    color: #FF13F0;
+    background-color: white;
+
 }
 
 @media (max-width:1024px){
