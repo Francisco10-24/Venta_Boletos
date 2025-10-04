@@ -61,7 +61,7 @@ body {
 /* --- BLOQUES --- */
 .bloques {
   display: flex;
-  flex-wrap: nowrap;   /* permite que se acomoden en varias filas */
+  flex-wrap: nowrap;   
   justify-content: center;
   gap: 20px;
   padding: 40px;
