@@ -1,7 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Overpass:ital,wght@0,100..900;1,100..900&family=Pinyon+Script&family=Unbounded:wght@200..900&display=swap');
 
 body {
-    font-family: Unbounded, Overpass, Montserrat;
+    font-family: Montserrat, Overpass, Montserrat;
     margin: 0;
     padding: 0;
 
