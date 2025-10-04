@@ -4,7 +4,7 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: Overpass;
+    font-family: Montserrat, Overpass;
 }
 
 header {
@@ -33,6 +33,7 @@ header {
     font-size: 55px;
     text-shadow: 0 4px 18px rgba(0,0,0.45);
     letter-spacing: 0.5px;
+    
 }
 
 .Formulario {
@@ -41,7 +42,7 @@ header {
     color: white;
     padding: 30px;
     border-radius: 10px;
-    border: 2px solid white;
+    border: 2px ridge rgb(160, 150, 150);
     max-width: 780px;
     width: 60%;
     display: grid;                           
@@ -50,6 +51,7 @@ header {
     align-items: stretch;
     justify-content: center;
     font-size: 15px;
+    
 }
 
 .ColumnaIzquierda, .ColumnaDerecha {
@@ -57,6 +59,16 @@ header {
     flex-direction: column;
     gap: 15px;
 }
+
+input, select, textarea {
+    background: #1a1a1a;
+    color: #fff;
+    border: 2px solid #444;
+    padding: 10px;
+    border-radius: 8px;
+    transition: all 0.3s ease;
+}
+
 
 .boton {
     margin-top: 2%;
@@ -66,6 +78,15 @@ header {
     cursor: pointer;
     font-size: 15px;
     font-weight: bold;
+    font-weight: bold;
+    background: #e53bba;
+    color: #fff;
+    transition: all 0.3s ease;
+}
+
+.boton:hover {
+    background: #ffffff;
+    color: #e53bba;
 }
 
 #Mensaje {
@@ -74,7 +95,8 @@ header {
 
 input:focus, select:focus, textarea:focus {
     outline: none;
-    border: 2px solid #1e90ff;
+    border: 2px solid #ff1ebc;
+    box-shadow: 0 0 10px #e53bba, 0 0 10px #ff6ee0;
 }
 
 @media (max-width:1024px){
