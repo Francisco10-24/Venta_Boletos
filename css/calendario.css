@@ -88,3 +88,38 @@ body {
 .btn:hover {
     background: #0056b3;
 }
+
+/* Celulares (pantallas pequeñas) */
+@media (max-width: 600px) {
+    body {
+        padding: 10px;
+    }
+
+    .busqueda {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .busqueda label {
+        margin-top: 10px;
+    }
+
+    .evento {
+        font-size: 14px;
+        padding: 10px;
+    }
+}
+
+/* Tablets (pantallas medianas) */
+@media (min-width: 601px) and (max-width: 1024px) {
+    .resultados {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+/* Computadoras (pantallas grandes) */
+@media (min-width: 1025px) {
+    .resultados {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
