@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Overpass:ital,wght@0,100..900;1,100..900&family=Pinyon+Script&family=Unbounded:wght@200..900&display=swap');
+
 /* Variables de colores */
 :root {
     --primary: #8B5CF6;
@@ -31,7 +33,7 @@
 }
 
 body {
-    font-family: 'Inter', 'Segoe UI', system-ui, -apple-system, sans-serif;
+    font-family: 'Montserrat', sans-serif;
     line-height: 1.7;
     color: var(--dark-text);
     background: var(--dark-bg);
@@ -433,6 +435,61 @@ section {
     line-height: 1.6;
 }
 
+/* Footer */
+.footer {
+    background: rgba(15, 15, 21, 0.95);
+    backdrop-filter: blur(20px);
+    border-top: 1px solid var(--dark-border);
+    padding: 4rem 0 2rem;
+    margin-top: 6rem;
+}
+
+.footer-content {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 3rem;
+    margin-bottom: 3rem;
+}
+
+.footer-info h3 {
+    font-size: 1.8rem;
+    margin-bottom: 1.5rem;
+    background: linear-gradient(135deg, var(--primary), var(--secondary));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    font-weight: 700;
+}
+
+.footer-info p {
+    color: var(--dark-text-light);
+    line-height: 1.6;
+    font-size: 1rem;
+}
+
+.footer-contact h4 {
+    font-size: 1.3rem;
+    margin-bottom: 1.5rem;
+    color: var(--dark-text);
+    font-weight: 600;
+}
+
+.footer-contact p {
+    color: var(--dark-text-light);
+    line-height: 1.6;
+    font-size: 1rem;
+}
+
+.footer-bottom {
+    border-top: 1px solid var(--dark-border);
+    padding-top: 2rem;
+    text-align: center;
+}
+
+.footer-bottom p {
+    color: var(--dark-text-lighter);
+    font-size: 0.9rem;
+}
 
 /* Efectos de partículas para el fondo (opcional) */
 @keyframes float {

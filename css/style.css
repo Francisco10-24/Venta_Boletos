@@ -35,12 +35,10 @@
 }
 
 body {
-    font-family: 'Montserrat', sans-serif;
-    line-height: 1.7;
-    color: var(--dark-text);
-    background: var(--dark-bg);
-    overflow-x: hidden;
-    min-height: 100vh;
+  background: #0d0d0d; 
+  color: #f6f6f6;
+  font-family: 'Montserrat', sans-serif;
+  line-height: 1.6;
 }
 
 /* Fondo con gradiente sutil */
