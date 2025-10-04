@@ -106,40 +106,39 @@ body {
     }
 }
 
+/* Pantallas grandes (desktops, 1200px en adelante) */
+@media (min-width: 1200px) {
+    .galeria .concierto {
+        flex: 1 1 calc(33.333% - 30px);
+        /* 3 columnas exactas */
+        max-width: calc(33.333% - 30px);
+    }
+}
+
+/* Pantallas medianas (tablets, 768px a 1199px) */
+@media (min-width: 768px) and (max-width: 1199px) {
+    .galeria .concierto {
+        flex: 1 1 calc(33.333% - 20px);
+        /* 3 columnas en tablets */
+        max-width: calc(33.333% - 20px);
+    }
+
+    .galeria {
+        gap: 20px;
+        padding: 20px;
+    }
+}
+
 /* Pantallas pequeñas (móviles, hasta 767px) */
 @media (max-width: 767px) {
     .galeria .concierto {
-        flex: 1 1 100%;
-        /* 1 columna en móviles */
-        max-width: 100%;
-        margin-bottom: 20px;
-    }
-
-    .concierto img {
-        height: 220px;
-        /* Altura ajustada para móviles */
-    }
-
-    .concierto h3 {
-        font-size: 1.4em;
-        padding: 8px;
-    }
-
-    .concierto p {
-        font-size: 1.1em;
-        padding: 6px;
+        flex: 1 1 calc(50% - 15px);
+        /* 2 columnas en móviles */
+        max-width: calc(50% - 15px);
     }
 
     .galeria {
         gap: 15px;
         padding: 15px;
-    }
-}
-
-/* Ajustes para el contenedor principal en móviles */
-@media (max-width: 767px) {
-    .contenido {
-        min-height: 100vh;
-        padding: 0;
     }
 }
