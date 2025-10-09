@@ -1,12 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Overpass:ital,wght@0,100..900;1,100..900&family=Pinyon+Script&family=Unbounded:wght@200..900&display=swap');
 
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: Montserrat, Overpass;
-    color: white;
-}
+
 
 .Tendencia h1 {
     background: linear-gradient(90deg, #0B0D1E, #18154A, #081731);

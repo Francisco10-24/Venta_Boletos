@@ -1,11 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Overpass:ital,wght@0,100..900;1,100..900&family=Pinyon+Script&family=Unbounded:wght@200..900&display=swap');
 
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: Montserrat, Overpass;
-}
 
 header {
     background-color: white;
@@ -17,7 +11,7 @@ header {
     background-repeat: no-repeat;
     background-position: center;
     min-height: 100vh;
-    color: black;
+    color: rgb(88, 88, 88);
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -37,12 +31,12 @@ header {
 }
 
 .Formulario {
-    background-color: rgba(0, 0, 0, 0.82);
+    background-color: rgba(34, 33, 33, 0.82);
     box-shadow: 0 12px 40px rgba(0,0,0, 0.5);
     color: white;
     padding: 30px;
     border-radius: 10px;
-    border: 2px ridge rgb(160, 150, 150);
+    border: 2px ridge rgb(0, 0, 0);
     max-width: 780px;
     width: 60%;
     display: grid;                           

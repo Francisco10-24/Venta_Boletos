@@ -1,14 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Overpass:ital,wght@0,100..900;1,100..900&family=Pinyon+Script&family=Unbounded:wght@200..900&display=swap');
 
-* {
-    margin: 0;
-    padding: 0;
-    border: 0;
-    list-style: none;
-    text-decoration: none;
-    box-sizing: border-box;
 
-}
 
 body {
     font-family: Montserrat;
@@ -143,9 +135,8 @@ body {
 /* Pantallas pequeñas (móviles, hasta 767px) */
 @media (max-width: 767px) {
     .galeria .concierto {
-        flex: 1 1 calc(50% - 15px);
-        /* 2 columnas en móviles */
-        max-width: calc(50% - 15px);
+        flex: 1 1 100%;
+        max-width: 100%;
     }
 
     .galeria {
