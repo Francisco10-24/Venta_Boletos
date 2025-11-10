@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gestión de Usuarios - NextLab</title>
+    <link rel="stylesheet" href="css/admin.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body class="admin-dashboard">
+    <div class="dashboard-container">
+        <!-- Sidebar -->
+        <div class="sidebar">
+            <div class="sidebar-content">
+                <div class="sidebar-header">
+                    <h4>🎵 NextLab</h4>
+                    <small>Panel Administrativo</small>
+                </div>
+                
+                <div class="sidebar-nav">
+                    <ul class="nav flex-column">
+                        <li class="nav-item">
+                            <a class="nav-link" href="admin-dashboard.html">
+                                📊 Dashboard
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="gestion-conciertos.html">
+                                🎤 Gestionar Conciertos
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link active" href="gestion-usuario.html">
+                                👥 Gestionar Usuarios
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="ventas.html">
+                                💰 Ventas
+                            </a>
+                        </li>
+                        <li class="nav-item mt-4">
+                            <button class="nav-link text-danger" onclick="logout()">
+                                🚪 Cerrar Sesión
+                            </button>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- Main Content -->
+        <div class="main-content">
+            <div class="main-header">
+                <h1>👥 Gestión de Usuarios</h1>
+                <div class="user-info">
+                    <span id="userEmail" class="user-email">Cargando...</span>
+                </div>
+            </div>
+
+            <!-- Botón Nuevo Usuario -->
+            <div class="d-flex justify-content-between align-items-center mb-4 flex-wrap gap-2">
+                <div></div>
+                <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#nuevoUsuarioModal">
+                    👤 Nuevo Usuario
+                </button>
+            </div>
+
+            <!-- Estadísticas Rápidas -->
+            <div class="stats-grid mb-4">
+                <div class="stat-card">
+                    <div class="stat-number" id="totalUsuarios">0</div>
+                    <div class="stat-label">Total Usuarios</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number" id="totalAdmins">0</div>
+                    <div class="stat-label">Administradores</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number" id="totalEmpleados">0</div>
+                    <div class="stat-label">Empleados</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number" id="totalClientes">0</div>
+                    <div class="stat-label">Clientes</div>
+                </div>
+            </div>
+
+            <!-- Lista de Usuarios -->
+            <div class="card">
+                <div class="card-header">
+                    <h5 class="card-title mb-0">📋 Lista de Usuarios Registrados</h5>
+                </div>
+                <div class="card-body">
+                    <div class="table-responsive">
+                        <table class="table table-dark table-hover">
+                            <thead>
+                                <tr>
+                                    <th>Email</th>
+                                    <th>Tipo</th>
+                                    <th>Fecha Registro</th>
+                                    <th>Acciones</th>
+                                </tr>
+                            </thead>
+                            <tbody id="tablaUsuarios">
+                                <tr>
+                                    <td colspan="4" class="text-center">Cargando usuarios...</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal Nuevo Usuario -->
+    <div class="modal fade" id="nuevoUsuarioModal" tabindex="-1">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">👤 Agregar Nuevo Usuario</h5>
+                    <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"></button>
+                </div>
+                <div class="modal-body">
+                    <form id="formNuevoUsuario">
+                        <div class="form-group">
+                            <label class="form-label">Email del Usuario</label>
+                            <input type="email" class="form-control" id="emailUsuario" required 
+                                   placeholder="ejemplo@correo.com">
+                            <small class="help-text">El usuario usará este email para iniciar sesión</small>
+                        </div>
+                        <div class="form-group">
+                            <label class="form-label">Contraseña</label>
+                            <input type="password" class="form-control" id="passwordUsuario" required 
+                                   placeholder="Mínimo 6 caracteres" minlength="6">
+                            <small class="help-text">La contraseña debe tener al menos 6 caracteres</small>
+                        </div>
+                        <div class="form-group">
+                            <label class="form-label">Tipo de Usuario</label>
+                            <select class="form-select" id="tipoUsuario" required>
+                                <option value="">Selecciona un tipo</option>
+                                <option value="empleado">Empleado</option>
+                                <option value="admin">Administrador</option>
+                                <option value="cliente">Cliente</option>
+                            </select>
+                            <small class="help-text">Define los permisos del usuario en el sistema</small>
+                        </div>
+                        <div class="form-group">
+                            <label class="form-label">Nombre Completo (opcional)</label>
+                            <input type="text" class="form-control" id="nombreUsuario" 
+                                   placeholder="Ej: Juan Pérez García">
+                            <small class="help-text">Nombre real del usuario (campo opcional)</small>
+                        </div>
+                    </form>
+                </div>
+                
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
+                    <button type="button" class="btn btn-primary" onclick="crearUsuario()">Crear Usuario</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+    <!-- Script separado -->
+    <script type="module" src="js/gestion-usuarios.js"></script>
+</body>
+</html>

@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Comprar Boletos - NextLab</title>
+    <link rel="stylesheet" href="css/admin.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body class="admin-dashboard">
+    <div class="dashboard-container">
+        <!-- Sidebar simplificado para clientes -->
+        <div class="sidebar">
+            <div class="sidebar-content">
+                <div class="sidebar-header">
+                    <h4>🎵 NextLab</h4>
+                    <small>Tienda de Conciertos</small>
+                </div>
+                
+                <div class="sidebar-nav">
+                    <ul class="nav flex-column">
+                        <li class="nav-item">
+                            <a class="nav-link" href="index.html">
+                                🏠 Inicio
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="conciertos.html">
+                                🎵 Conciertos
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link active" href="compra-cliente.html">
+                                🎫 Comprar Boletos
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="admin-login.html">
+                                🔐 Admin
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- Main Content -->
+        <div class="main-content">
+            <div class="main-header">
+                <h1>🎫 Comprar Boletos</h1>
+                <div class="user-info">
+                    <span class="user-email">Cliente</span>
+                </div>
+            </div>
+
+            <div class="section-header text-center mb-5">
+                <p class="section-subtitle">Selecciona el concierto y completa tu compra</p>
+            </div>
+
+            <!-- Lista de Conciertos Disponibles -->
+            <div class="card mb-5">
+                <div class="card-header">
+                    <h5 class="card-title mb-0">🎵 Conciertos Disponibles</h5>
+                </div>
+                <div class="card-body">
+                    <div class="row" id="conciertosDisponibles">
+                        <div class="col-12 text-center">
+                            <div class="spinner-border text-primary" role="status">
+                                <span class="visually-hidden">Cargando conciertos...</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Formulario de Compra -->
+            <div class="card mt-5 d-none" id="formularioCompra">
+                <div class="card-header">
+                    <h4 class="card-title mb-0">💳 Finalizar Compra</h4>
+                </div>
+                <div class="card-body">
+                    <form id="formCompra">
+                        <div class="row">
+                            <div class="col-md-6">
+                                <h5>Información del Concierto</h5>
+                                <div class="mb-3">
+                                    <label class="form-label">Concierto seleccionado</label>
+                                    <input type="text" class="form-control" id="conciertoSeleccionado" readonly>
+                                </div>
+                                <div class="mb-3">
+                                    <label class="form-label">Cantidad de boletos</label>
+                                    <select class="form-select" id="cantidadBoletos">
+                                        <option value="1">1 boleto</option>
+                                        <option value="2">2 boletos</option>
+                                        <option value="3">3 boletos</option>
+                                        <option value="4">4 boletos</option>
+                                    </select>
+                                </div>
+                                <div class="mb-3">
+                                    <label class="form-label">Precio total</label>
+                                    <input type="text" class="form-control" id="precioTotal" readonly>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <h5>Información de Pago</h5>
+                                <div class="mb-3">
+                                    <label class="form-label">Email</label>
+                                    <input type="email" class="form-control" id="emailCliente" required>
+                                </div>
+                                <div class="mb-3">
+                                    <label class="form-label">Número de Tarjeta</label>
+                                    <input type="text" class="form-control" id="numeroTarjeta" 
+                                           placeholder="1234 5678 9012 3456" required maxlength="19">
+                                </div>
+                                <div class="row">
+                                    <div class="col-6">
+                                        <label class="form-label">Fecha Expiración</label>
+                                        <input type="text" class="form-control" id="fechaExpiracion" 
+                                               placeholder="MM/AA" required maxlength="5">
+                                    </div>
+                                    <div class="col-6">
+                                        <label class="form-label">CVV</label>
+                                        <input type="text" class="form-control" id="cvv" 
+                                               placeholder="123" required maxlength="3">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="mt-4">
+                            <button type="submit" class="btn btn-primary btn-lg w-100">
+                                🎫 Comprar Boletos - <span id="totalCompra">$0</span>
+                            </button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+    <!-- Script separado -->
+    <script type="module" src="js/compra-cliente.js"></script>
+</body>
+</html>

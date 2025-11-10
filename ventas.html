@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ventas - NextLab</title>
+    <link rel="stylesheet" href="css/admin.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body class="admin-dashboard">
+    <div class="dashboard-container">
+        <!-- Sidebar -->
+        <div class="sidebar">
+            <div class="sidebar-content">
+                <div class="sidebar-header">
+                    <h4>🎵 NextLab</h4>
+                    <small>Panel Administrativo</small>
+                </div>
+                
+                <div class="sidebar-nav">
+                    <ul class="nav flex-column">
+                        <li class="nav-item">
+                            <a class="nav-link" href="admin-dashboard.html">
+                                📊 Dashboard
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="gestion-conciertos.html">
+                                🎤 Gestionar Conciertos
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="gestion-usuario.html">
+                                👥 Gestionar Usuarios
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link active" href="ventas.html">
+                                💰 Ventas
+                            </a>
+                        </li>
+                        <li class="nav-item mt-4">
+                            <button class="nav-link text-danger" onclick="logout()">
+                                🚪 Cerrar Sesión
+                            </button>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- Main Content -->
+        <div class="main-content">
+            <div class="main-header">
+                <h1>💰 Gestión de Ventas</h1>
+                <div class="user-info">
+                    <span id="userEmail" class="user-email">Cargando...</span>
+                </div>
+            </div>
+
+            <!-- Estadísticas de Ventas -->
+            <div class="stats-grid mb-4">
+                <div class="stat-card">
+                    <div class="stat-number" id="totalVentas">0</div>
+                    <div class="stat-label">Ventas Totales</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number" id="ingresosTotales">$0</div>
+                    <div class="stat-label">Ingresos Totales</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number" id="ventasHoy">0</div>
+                    <div class="stat-label">Ventas Hoy</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number" id="conciertoPopular">-</div>
+                    <div class="stat-label">Concierto Popular</div>
+                </div>
+            </div>
+
+            <!-- Botones de Acción -->
+            <div class="d-flex justify-content-between align-items-center mb-4 flex-wrap gap-2">
+                <div></div>
+                <div class="d-flex gap-2 flex-wrap">
+                    <button class="btn btn-success" onclick="simularVenta()">
+                        🎫 Simular Venta
+                    </button>
+                    <button class="btn btn-primary" onclick="generarReporte()">
+                        📊 Generar Reporte
+                    </button>
+                </div>
+            </div>
+
+            <!-- Lista de Ventas -->
+            <div class="card">
+                <div class="card-header">
+                    <h5 class="card-title mb-0">📋 Historial de Ventas</h5>
+                </div>
+                <div class="card-body">
+                    <div class="table-responsive">
+                        <table class="table table-dark table-hover">
+                            <thead>
+                                <tr>
+                                    <th>ID Venta</th>
+                                    <th>Concierto</th>
+                                    <th>Cliente</th>
+                                    <th>Cantidad</th>
+                                    <th>Total</th>
+                                    <th>Fecha</th>
+                                    <th>Estado</th>
+                                </tr>
+                            </thead>
+                            <tbody id="tablaVentas">
+                                <tr>
+                                    <td colspan="7" class="text-center">Cargando ventas...</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+    <!-- Script separado -->
+    <script type="module" src="js/ventas.js"></script>
+</body>
+</html>

@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard - NextLab</title>
+    <link rel="stylesheet" href="css/admin.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body class="admin-dashboard">
+    <div class="dashboard-container">
+        <!-- Sidebar -->
+        <div class="sidebar">
+            <div class="sidebar-content">
+                <div class="sidebar-header">
+                    <h4>🎵 NextLab</h4>
+                    <small>Panel Administrativo</small>
+                </div>
+                
+                <div class="sidebar-nav">
+                    <ul class="nav flex-column">
+                        <li class="nav-item">
+                            <a class="nav-link active" href="admin-dashboard.html">
+                                📊 Dashboard
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="gestion-conciertos.html">
+                                🎤 Gestionar Conciertos
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="gestion-usuario.html">
+                                👥 Gestionar Usuarios
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="ventas.html">
+                                💰 Ventas
+                            </a>
+                        </li>
+                        <li class="nav-item mt-4">
+                            <button class="nav-link text-danger" onclick="logout()">
+                                🚪 Cerrar Sesión
+                            </button>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- Main Content -->
+        <div class="main-content">
+            <div class="main-header">
+                <h1>Dashboard Principal</h1>
+                <div class="user-info">
+                    <span id="userEmail" class="user-email">Cargando...</span>
+                </div>
+            </div>
+
+            <!-- Estadísticas -->
+            <div class="stats-grid">
+                <div class="stat-card">
+                    <div class="stat-number" id="totalConciertos">0</div>
+                    <div class="stat-label">Conciertos Activos</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number" id="totalVentas">0</div>
+                    <div class="stat-label">Ventas Totales</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number" id="totalUsuarios">0</div>
+                    <div class="stat-label">Usuarios Registrados</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number" id="ingresos">$0</div>
+                    <div class="stat-label">Ingresos Totales</div>
+                </div>
+            </div>
+
+            <!-- Conciertos Recientes -->
+            <div class="card">
+                <div class="card-header">
+                    <h5 class="card-title mb-0">🎵 Conciertos Recientes</h5>
+                </div>
+                <div class="card-body">
+                    <div id="conciertosList" class="text-center">
+                        <p>Cargando conciertos...</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Script separado -->
+    <script type="module" src="/js/adminDashboard.js"></script>
+</body>
+</html>
