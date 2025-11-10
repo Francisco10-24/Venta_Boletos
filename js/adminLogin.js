@@ -12,7 +12,7 @@ import {
     serverTimestamp 
 } from "https://www.gstatic.com/firebasejs/12.5.0/firebase-firestore.js";
 
-// Hacer las funciones disponibles globalmente (COMO TU CÓDIGO ORIGINAL)
+// Hacer las funciones disponibles globalmente 
 window.auth = auth;
 window.db = db;
 window.signInWithEmailAndPassword = signInWithEmailAndPassword;
@@ -22,7 +22,7 @@ window.firestore = {
     doc, getDoc, setDoc, serverTimestamp
 };
 
-// Verificar autenticación (COMO TU CÓDIGO ORIGINAL)
+// Verificar autenticación 
 onAuthStateChanged(auth, (user) => {
     if (user) {
         console.log('Usuario logueado:', user.email);
@@ -35,7 +35,7 @@ onAuthStateChanged(auth, (user) => {
     }
 });
 
-// Función de login (COMO TU CÓDIGO ORIGINAL)
+// Función de login 
 document.getElementById('loginForm')?.addEventListener('submit', async (e) => {
     e.preventDefault();
     
@@ -64,7 +64,7 @@ document.getElementById('loginForm')?.addEventListener('submit', async (e) => {
     }
 });
 
-// Verificar rol de usuario (COMO TU CÓDIGO ORIGINAL)
+// Verificar rol de usuario 
 async function checkUserRole(userId) {
     try {
         const userDocRef = doc(db, 'usuarios', userId);
@@ -90,7 +90,7 @@ async function checkUserRole(userId) {
     }
 }
 
-// Cerrar sesión (para usar en otras páginas) (COMO TU CÓDIGO ORIGINAL)
+// Cerrar sesión (para usar en otras páginas) 
 window.logout = function() {
     signOut(auth).then(() => {
         window.location.href = 'admin-login.html';
@@ -98,31 +98,3 @@ window.logout = function() {
 };
 
 // Función para crear usuario (temporal - eliminar después)
-window.crearUsuarioAdmin = async function() {
-    const email = 'frauda024@gmail.com';
-    const password = 'PatoLoco24';
-    
-    try {
-        console.log('🔄 Creando usuario admin...');
-        const userCredential = await createUserWithEmailAndPassword(auth, email, password);
-        
-        // Crear en Firestore
-        await setDoc(doc(db, 'usuarios', userCredential.user.uid), {
-            email: email,
-            tipo: 'admin',
-            fechaRegistro: serverTimestamp(),
-            nombre: 'Administrador Principal'
-        });
-        
-        console.log('✅ Usuario admin creado exitosamente');
-        alert('✅ Usuario admin creado:\nEmail: admin@nextlab.com\nPassword: admin2025$');
-        
-    } catch (error) {
-        console.error('❌ Error creando usuario:', error);
-        if (error.code === 'auth/email-already-in-use') {
-            alert('⚠️ El usuario admin ya existe');
-        } else {
-            alert('❌ Error: ' + error.message);
-        }
-    }
-};
