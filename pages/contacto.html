@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulario de contacto</title>
+    <link rel="stylesheet" href="css/ContactoStyle.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/header_footer.css">
+</head>
+
+<body>
+    <header class="header">
+        <nav class="navbar">
+            <div class="logo">NextLab</div>
+            <ul class="nav-menu">
+                <li><a href="index.html" id="inicio">Inicio</a></li>
+                <li><a href="galeria.html" id="galeria">Galeria</a></li>
+                <li><a href="contacto.html" id="contacto">Contacto</a></li>
+                <li><a href="acerca.html" id="acerca-de">Acerca de</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section class="CuadroCentral">
+        <h1>¡Contáctanos!</h1>
+        <form id="Conciertos" class="Formulario" method="post">
+
+        <section class="ColumnaIzquierda">
+        <div class="Nombre">
+            <label for="Nombre">Nombre:</label>
+            <input id="Nombre" type="text" name="Nombre" autocomplete="given-name" required>
+        </div>
+
+        <div class="Apellido">
+            <label for="Apellido">Apellido:</label>
+            <input id="Apellido" type="text" name="Apellido" autocomplete="family-name" required>
+        </div>
+
+        <div class="CorreoElectronico">
+            <label>Correo electrónico:</label>
+            <input id="CorreoElectronico" type="email" name="CorreoElectronico" autocomplete="email" required>
+        </div>
+
+        <div class="NumeroTelefono">
+            <label>Número de teléfono:</label>
+            <input id="NumeroTelefono" type="tel" pattern="^[0-9]{8}$" title="Debe contener 8 digitos numericos" name="NumeroTelefono" autocomplete="tel" required>
+        </div>
+        </section>
+        
+        <section class="ColumnaDerecha">
+        <div class="Motivo">
+            <label>Motivo:</label>
+            <select id="Motive" name="Motivo" required>
+                <option value="" disabled selected>Seleccione el motivo</option>
+                <option value="Boletos">No recibí mi boleto</option>
+                <option value="Compras">Problemas con la compra</option>
+                <option value="Cancelación">Cancelación y rembolsos</option>
+                <option value="Problemas">Fallos en la página</option>
+                <option value="Reclamos">Quejas o reclamos</option>
+                <option value="Otros">Otros</option>
+            </select>
+        </div>
+
+        <div class="Motivo">
+            <label for="Mensaje">Describe el motivo del mensaje:</label>
+            <textarea id="Mensaje" name="Mensaje" rows="5" cols="47" required></textarea>
+        </div>
+        </section>
+
+        </form>
+        <button form="Conciertos" class="boton" type="submit">Enviar formulario</button>
+    </section>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-info">
+                    <h3>NextLab Concerts</h3>
+                    <p>Tu plataforma para experiencias musicales inolvidables.</p>
+                </div>
+                <div class="footer-contact">
+                    <h4>Contacto</h4>
+                    <p>info@nextlab.com<br>+503 2374-5678</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 NextLab Concerts. Todos los derechos reservados.</p>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
