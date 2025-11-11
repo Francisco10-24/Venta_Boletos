@@ -8,7 +8,7 @@ onAuthStateChanged(auth, (user) => {
         document.getElementById('userEmail').textContent = user.email;
         cargarConciertos();
     } else {
-        window.location.href = 'admin-login.html';
+        window.location.href = 'adminLogin.html';
     }
 });
 
@@ -94,10 +94,10 @@ window.eliminarConcierto = async function(conciertoId) {
 window.logout = function() {
     signOut(auth).then(() => {
         console.log('✅ Sesión cerrada exitosamente');
-        window.location.href = 'admin-login.html';
+        window.location.href = 'adminLogin.html';
     }).catch((error) => {
         console.error('❌ Error al cerrar sesión:', error);
         // Forzar redirección incluso si hay error
-        window.location.href = 'admin-login.html';
+        window.location.href = 'adminLogin.html';
     });
 };

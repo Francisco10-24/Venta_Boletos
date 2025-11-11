@@ -29,8 +29,8 @@ onAuthStateChanged(auth, (user) => {
         checkUserRole(user.uid);
     } else {
         console.log('No hay usuario logueado');
-        if (window.location.pathname.includes('admin') && !window.location.pathname.includes('admin-login.html')) {
-            window.location.href = 'admin-login.html';
+        if (window.location.pathname.includes('admin') && !window.location.pathname.includes('adminLogin.html')) {
+            window.location.href = 'adminLogin.html';
         }
     }
 });
@@ -59,7 +59,7 @@ document.getElementById('loginForm')?.addEventListener('submit', async (e) => {
     } catch (error) {
         // Error en login
         messageDiv.className = 'alert alert-danger mt-3';
-        messageDiv.textContent = '❌ Error: ' + error.message;
+        messageDiv.textContent = ' Error: ' + error.message;
         messageDiv.classList.remove('d-none');
     }
 });
@@ -93,8 +93,8 @@ async function checkUserRole(userId) {
 // Cerrar sesión (para usar en otras páginas) 
 window.logout = function() {
     signOut(auth).then(() => {
-        window.location.href = 'admin-login.html';
+        window.location.href = 'adminLogin.html';
     });
 };
 
-// Función para crear usuario (temporal - eliminar después)
+

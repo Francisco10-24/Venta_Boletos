@@ -19,7 +19,7 @@ export function logout() {
 export async function requireAuth() {
     const user = await verificarAutenticacion();
     if (!user) {
-        window.location.href = 'admin-login.html';
+        window.location.href = 'adminLogin.html';
         return null;
     }
     return user;

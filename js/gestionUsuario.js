@@ -8,7 +8,7 @@ onAuthStateChanged(auth, (user) => {
         document.getElementById('userEmail').textContent = user.email;
         cargarUsuarios();
     } else {
-        window.location.href = 'admin-login.html';
+        window.location.href = 'adminLogin.html';
     }
 });
 
@@ -109,7 +109,7 @@ window.crearUsuario = async function() {
 
     } catch (error) {
         console.error('Error creando usuario:', error);
-        alert('❌ Error al crear usuario: ' + error.message);
+        alert(' Error al crear usuario: ' + error.message);
     }
 };
 
@@ -128,10 +128,10 @@ window.eliminarUsuario = function(usuarioId) {
 window.logout = function() {
     signOut(auth).then(() => {
         console.log('✅ Sesión cerrada exitosamente');
-        window.location.href = 'admin-login.html';
+        window.location.href = 'adminLogin.html';
     }).catch((error) => {
-        console.error('❌ Error al cerrar sesión:', error);
+        console.error(' Error al cerrar sesión:', error);
         // Forzar redirección incluso si hay error
-        window.location.href = 'admin-login.html';
+        window.location.href = 'adminLogin.html';
     });
 };
