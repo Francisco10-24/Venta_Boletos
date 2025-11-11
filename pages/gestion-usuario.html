@@ -1,12 +1,14 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Gestión de Usuarios - NextLab</title>
-    <link rel="stylesheet" href="/css/admin.css">
+    <link rel="stylesheet" href="../css/admin.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
 </head>
+
 <body class="admin-dashboard">
     <div class="dashboard-container">
         <!-- Sidebar -->
@@ -16,7 +18,7 @@
                     <h4>🎵 NextLab</h4>
                     <small>Panel Administrativo</small>
                 </div>
-                
+
                 <div class="sidebar-nav">
                     <ul class="nav flex-column">
                         <li class="nav-item">
@@ -126,14 +128,14 @@
                     <form id="formNuevoUsuario">
                         <div class="form-group">
                             <label class="form-label">Email del Usuario</label>
-                            <input type="email" class="form-control" id="emailUsuario" required 
-                                   placeholder="ejemplo@correo.com">
+                            <input type="email" class="form-control" id="emailUsuario" required
+                                placeholder="ejemplo@correo.com">
                             <small class="help-text">El usuario usará este email para iniciar sesión</small>
                         </div>
                         <div class="form-group">
                             <label class="form-label">Contraseña</label>
-                            <input type="password" class="form-control" id="passwordUsuario" required 
-                                   placeholder="Mínimo 6 caracteres" minlength="6">
+                            <input type="password" class="form-control" id="passwordUsuario" required
+                                placeholder="Mínimo 6 caracteres" minlength="6">
                             <small class="help-text">La contraseña debe tener al menos 6 caracteres</small>
                         </div>
                         <div class="form-group">
@@ -148,13 +150,13 @@
                         </div>
                         <div class="form-group">
                             <label class="form-label">Nombre Completo (opcional)</label>
-                            <input type="text" class="form-control" id="nombreUsuario" 
-                                   placeholder="Ej: Juan Pérez García">
+                            <input type="text" class="form-control" id="nombreUsuario"
+                                placeholder="Ej: Juan Pérez García">
                             <small class="help-text">Nombre real del usuario (campo opcional)</small>
                         </div>
                     </form>
                 </div>
-                
+
                 <div class="modal-footer">
                     <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
                     <button type="button" class="btn btn-primary" onclick="crearUsuario()">Crear Usuario</button>
@@ -167,6 +169,7 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 
     <!-- Script separado -->
-    <script type="module" src="js/gestionUsuario.js"></script>
+    <script type="module" src="../js/gestionUsuario.js" defer></script>
 </body>
+
 </html>
