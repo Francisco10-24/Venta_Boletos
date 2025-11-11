@@ -1,4 +1,4 @@
-import { db } from './firebase-config.js';
+import { db } from './firebasejs';
 import { collection, getDocs, addDoc, serverTimestamp } from "https://www.gstatic.com/firebasejs/12.5.0/firebase-firestore.js";
 
 let conciertoActual = null;

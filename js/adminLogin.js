@@ -29,8 +29,8 @@ onAuthStateChanged(auth, (user) => {
         checkUserRole(user.uid);
     } else {
         console.log('No hay usuario logueado');
-        if (window.location.pathname.includes('admin') && !window.location.pathname.includes('adminLogin.html')) {
-            window.location.href = 'adminLogin.html';
+        if (window.location.pathname.includes('admin') && !window.location.pathname.includes('admin-login.html')) {
+            window.location.href = 'admin-login.html';
         }
     }
 });
@@ -93,7 +93,7 @@ async function checkUserRole(userId) {
 // Cerrar sesión (para usar en otras páginas) 
 window.logout = function() {
     signOut(auth).then(() => {
-        window.location.href = 'adminLogin.html';
+        window.location.href = 'admin-login.html';
     });
 };
 
