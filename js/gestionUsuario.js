@@ -11,22 +11,18 @@ onAuthStateChanged(auth, async (user) => {
 
     if (user) {
         const userData = await getCurrentUser();
-        if (userData) {
-            // Solo administradores pueden acceder a gestión de usuarios
-            if (userData.tipo !== 'admin') {
-                alert('No tienes permisos para acceder a esta sección');
-                window.location.href = 'admin-dashboard.html';
-                return;
-            }
+        console.log('Datos del usuario desde Firestore:', userData);
 
+        if (userData && userData.tipo === 'admin') {
             currentAdminUser = user;
-            adminAuth = auth; // Guardar la instancia de auth
-
+            adminAuth = auth;
             document.getElementById('userEmail').textContent = user.email;
             await cargarUsuarios();
-
         } else {
+            console.error('Usuario no es admin o no tiene datos:', userData);
+            alert('No tienes permisos para acceder a esta sección');
             window.location.href = 'login.html';
+            return;
         }
     } else {
         window.location.href = 'login.html';
@@ -110,13 +106,8 @@ window.crearUsuario = async function () {
     const tipo = document.getElementById('tipoUsuario').value;
     const nombre = document.getElementById('nombreUsuario').value;
 
-    if (!email || !password) {
-        alert('Por favor completa email y contraseña');
-        return;
-    }
-
-    if (password.length < 6) {
-        alert('La contraseña debe tener al menos 6 caracteres');
+    if (!email || !password || !tipo) {
+        alert('Por favor completa todos los campos');
         return;
     }
 
@@ -124,20 +115,25 @@ window.crearUsuario = async function () {
         const modal = bootstrap.Modal.getInstance(document.getElementById('nuevoUsuarioModal'));
         if (modal) modal.hide();
 
-        // 2. Mostrar mensaje de que la sesión cambiará
-        alert(`Se creará el usuario ${email} y se cambiará la sesión. Después deberás volver a iniciar sesión como administrador.`);
-
-        // 3. Crear el usuario (esto cambiará la sesión)
         const resultado = await createUserAsAdmin(email, password, nombre, tipo);
 
         if (resultado.success) {
-            // 4. Mostrar confirmación y redirigir al login
-            alert(`Usuario ${email} creado exitosamente.\n\nAhora inicias sesión como ${tipo}. Para volver al panel admin, cierra sesión e inicia con tu cuenta de administrador.`);
+            // 3. Verificar QUÉ se guardó realmente en Firestore
+            console.log('Verificando datos guardados...');
+            const userDoc = await getDoc(doc(db, "usuarios", resultado.userId));
+            const datosReales = userDoc.data();
 
-            // 5. Recargar la página para reflejar el nuevo usuario en la UI
+            // 4. Informar al usuario y redirigir
+            if (datosReales.tipo === tipo) {
+                alert(`Usuario creado correctamente como: ${tipo}\n\nAhora estás logueado como ${email}. Para volver al panel admin, cierra sesión e inicia con tu cuenta de administrador.`);
+            } else {
+                alert(`Usuario creado pero hay inconsistencia en los tipos.\nFirestore: ${datosReales.tipo}\nSeleccionado: ${tipo}`);
+            }
+
+
             setTimeout(() => {
                 window.location.reload();
-            }, 1000);
+            }, 2000);
 
         } else {
             throw new Error(resultado.error);
@@ -145,19 +141,7 @@ window.crearUsuario = async function () {
 
     } catch (error) {
         console.error('Error creando usuario:', error);
-
-        // Manejar errores específicos
-        if (error.message.includes('email-already-in-use')) {
-            alert('Error: El email ya está registrado');
-        } else if (error.message.includes('weak-password')) {
-            alert('Error: La contraseña es muy débil');
-        } else if (error.message.includes('network-request-failed')) {
-            alert('Error de conexión. Verifica tu internet.');
-        } else {
-            alert('Error al crear usuario: ' + error.message);
-        }
-
-        // Intentar recargar para restaurar estado
+        alert('Error: ' + error.message);
         window.location.reload();
     }
 };

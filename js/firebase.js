@@ -70,7 +70,7 @@ export async function loginUser(email, password) {
 export async function getCurrentUser() {
     try {
         const user = auth.currentUser;
-        console.log('Usuario de auth:', user ? user.uid : 'No user');
+        console.log('Usuario de auth:', user ? user.email : 'No user');
 
         if (user) {
             const userDoc = await getDoc(doc(db, "usuarios", user.uid));
@@ -81,8 +81,7 @@ export async function getCurrentUser() {
                 console.log('Datos del usuario:', userData);
                 return userData;
             } else {
-                console.log('No se encontró documento del usuario en Firestore');
-                return basicUserData;
+                return null;
             }
         }
         return null;
@@ -90,25 +89,28 @@ export async function getCurrentUser() {
         console.error('Error en getCurrentUser:', error);
         return null;
     }
-};
+}
 
 export async function createUserAsAdmin(email, password, nombre, tipo) {
     try {
-        console.log('Creando usuario como admin:', email);
 
-        // Simplemente crear el usuario - aceptamos que la sesión cambiará
         const userCredential = await createUserWithEmailAndPassword(auth, email, password);
         const newUser = userCredential.user;
 
-        // Guardar en Firestore
-        await setDoc(doc(db, "usuarios", newUser.uid), {
-            email,
+        // DATOS EXACTOS que vamos a guardar
+        const userData = {
+            email: email,
             nombre: nombre || '',
-            tipo: tipo,
+            tipo: tipo, // ← USAMOS EL PARÁMETRO DIRECTAMENTE
             fechaRegistro: serverTimestamp()
-        });
+        };
+        await setDoc(doc(db, "usuarios", newUser.uid), userData);
 
-        console.log("Usuario creado exitosamente en Firestore");
+        // VERIFICACIÓN EXTREMA
+        console.log('🔍 Verificando guardado...');
+        const verificationDoc = await getDoc(doc(db, "usuarios", newUser.uid));
+        const datosGuardados = verificationDoc.data();
+
         return { success: true, userId: newUser.uid };
 
     } catch (error) {
