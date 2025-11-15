@@ -1,24 +1,59 @@
-import { auth, db } from './firebase.js';
+import { auth, db, getCurrentUser } from './firebase.js';
 import { onAuthStateChanged, signOut } from "https://www.gstatic.com/firebasejs/12.5.0/firebase-auth.js";
 import { collection, getDocs, addDoc, serverTimestamp, query, orderBy } from "https://www.gstatic.com/firebasejs/12.5.0/firebase-firestore.js";
 
-// Verificar autenticación
-onAuthStateChanged(auth, (user) => {
+let currentUserType = '';
+
+// Verificar autenticación y permisos
+onAuthStateChanged(auth, async (user) => {
     if (user) {
-        document.getElementById('userEmail').textContent = user.email;
-        cargarVentas();
+        const userData = await getCurrentUser();
+        if (userData) {
+            currentUserType = userData.tipo;
+            document.getElementById('userEmail').textContent = user.email;
+
+            // Aplicar permisos según el tipo de usuario
+            aplicarPermisos(currentUserType);
+            await cargarVentas();
+
+        } else {
+            window.location.href = 'login.html';
+        }
     } else {
-        window.location.href = 'adminLogin.html';
+        window.location.href = 'login.html';
     }
 });
 
+// Función para aplicar permisos según el rol
+function aplicarPermisos(userType) {
+    const gestionUsuariosLink = document.querySelector('a[href="gestion-usuario.html"]');
+    const sidebarHeader = document.querySelector('.sidebar-header small');
+
+    if (userType === 'admin') {
+        sidebarHeader.textContent = 'Panel Administrativo - Administrador';
+        // Mostrar todo (ya está visible por defecto)
+        if (gestionUsuariosLink) {
+            gestionUsuariosLink.parentElement.style.display = 'block';
+        }
+    } else if (userType === 'empleado') {
+        sidebarHeader.textContent = 'Panel Administrativo - Empleado';
+        // Ocultar SOLO gestión de usuarios para empleados
+        if (gestionUsuariosLink) {
+            gestionUsuariosLink.parentElement.style.display = 'none';
+        }
+    } else if (userType === 'cliente') {
+        // CORRECCIÓN: Los clientes van a compra-cliente.html
+        window.location.href = 'compra-cliente.html';
+        return;
+    }
+}
 // Cargar ventas
 async function cargarVentas() {
     try {
         const q = query(collection(db, 'ventas'), orderBy('fechaVenta', 'desc'));
         const querySnapshot = await getDocs(q);
         const tabla = document.getElementById('tablaVentas');
-        
+
         let html = '';
         let totalVentas = 0;
         let ingresosTotales = 0;
@@ -32,7 +67,7 @@ async function cargarVentas() {
                 const venta = doc.data();
                 totalVentas++;
                 ingresosTotales += venta.total || 0;
-                
+
                 const fechaVenta = venta.fechaVenta?.toDate?.() || new Date();
                 if (fechaVenta.toDateString() === hoy) {
                     ventasHoy++;
@@ -53,7 +88,7 @@ async function cargarVentas() {
         }
 
         tabla.innerHTML = html;
-        
+
         // Actualizar estadísticas
         document.getElementById('totalVentas').textContent = totalVentas;
         document.getElementById('ingresosTotales').textContent = `$${ingresosTotales}`;
@@ -64,61 +99,14 @@ async function cargarVentas() {
     }
 }
 
-// Simular venta
-window.simularVenta = async function() {
-    try {
-        console.log('Iniciando simulación de venta...');
-        
-        const conciertosSnapshot = await getDocs(collection(db, 'conciertos'));
-        console.log('Conciertos encontrados:', conciertosSnapshot.size);
-        
-        if (conciertosSnapshot.empty) {
-            alert('❌ Primero crea algunos conciertos para simular ventas');
-            return;
-        }
-
-        const primerConciertoDoc = conciertosSnapshot.docs[0];
-        const primerConcierto = primerConciertoDoc.data();
-        const conciertoId = primerConciertoDoc.id;
-
-        const cantidad = Math.floor(Math.random() * 4) + 1;
-        const precioUnitario = parseFloat(primerConcierto.precio) || 50;
-        const total = cantidad * precioUnitario;
-
-        await addDoc(collection(db, 'ventas'), {
-            conciertoId: conciertoId,
-            conciertoNombre: primerConcierto.artista || 'Concierto Demo',
-            clienteEmail: 'cliente@ejemplo.com',
-            cantidad: cantidad,
-            total: total,
-            fechaVenta: serverTimestamp(),
-            estado: 'completada',
-            metodoPago: 'tarjeta_simulada',
-            tipo: 'simulada'
-        });
-
-        alert('✅ Venta simulada exitosamente');
-        cargarVentas();
-
-    } catch (error) {
-        console.error('Error simulando venta:', error);
-        alert('Error al simular venta: ' + error.message);
-    }
-};
-
-// Generar reporte
-window.generarReporte = function() {
-    alert('📊 Generando reporte de ventas... (Funcionalidad en desarrollo)');
-};
-
 // Función de logout 
-window.logout = function() {
+window.logout = function () {
     signOut(auth).then(() => {
         console.log('✅ Sesión cerrada exitosamente');
-        window.location.href = 'adminLogin.html';
+        window.location.href = 'login.html';
     }).catch((error) => {
         console.error(' Error al cerrar sesión:', error);
         // Forzar redirección incluso si hay error
-        window.location.href = 'adminLogin.html';
+        window.location.href = 'login.html';
     });
 };

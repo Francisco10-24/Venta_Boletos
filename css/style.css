@@ -11,7 +11,7 @@
     --secondary-dark: #DB2777;
     --accent: #10B981;
     --accent-dark: #059669;
-    
+
     /* Colores del tema oscuro */
     --dark-bg: #0F0F15;
     --dark-card: #1A1A23;
@@ -20,7 +20,7 @@
     --dark-text: #E2E8F0;
     --dark-text-light: #94A3B8;
     --dark-text-lighter: #64748B;
-    
+
     --shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.5);
     --shadow-hover: 0 20px 40px -10px rgba(0, 0, 0, 0.7);
     --border-radius: 16px;
@@ -35,10 +35,10 @@
 }
 
 body {
-  background: #0d0d0d; 
-  color: #f6f6f6;
-  font-family: Montserrat, Overpass, Montserrat;
-  line-height: 1.6;
+    background: #0d0d0d;
+    color: #f6f6f6;
+    font-family: Montserrat, Overpass, Montserrat;
+    line-height: 1.6;
 }
 
 /* Fondo con gradiente sutil */
@@ -49,7 +49,7 @@ body::before {
     left: 0;
     width: 100%;
     height: 100%;
-    background: 
+    background:
         radial-gradient(circle at 20% 80%, rgba(139, 92, 246, 0.1) 0%, transparent 50%),
         radial-gradient(circle at 80% 20%, rgba(236, 72, 153, 0.1) 0%, transparent 50%),
         radial-gradient(circle at 40% 40%, rgba(16, 185, 129, 0.05) 0%, transparent 50%);
@@ -333,42 +333,42 @@ body::before {
         flex-direction: column;
         gap: 1.5rem;
     }
-    
+
     .nav-menu {
         gap: 1rem;
         flex-wrap: wrap;
         justify-content: center;
     }
-    
+
     .hero-title {
         font-size: 2.8rem;
     }
-    
+
     .hero-subtitle {
         font-size: 1.1rem;
     }
-    
+
     .section-title {
         font-size: 2.2rem;
     }
-    
+
     .carousel-inner img {
         height: 400px;
     }
-    
+
     .carousel-caption {
         bottom: 10%;
         padding: 1.5rem;
     }
-    
+
     .carousel-caption h3 {
         font-size: 2rem;
     }
-    
+
     .services-grid {
         grid-template-columns: 1fr;
     }
-    
+
     .container {
         padding: 0 1.5rem;
     }
@@ -378,19 +378,19 @@ body::before {
     .hero {
         padding: 6rem 1.5rem;
     }
-    
+
     .hero-title {
         font-size: 2.2rem;
     }
-    
+
     .section-title {
         font-size: 1.8rem;
     }
-    
+
     .service-card {
         padding: 2.5rem 1.5rem;
     }
-    
+
     .carousel-control-prev,
     .carousel-control-next {
         margin: 0 1rem;

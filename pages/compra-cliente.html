@@ -37,9 +37,9 @@
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="admin-login.html">
-                                🔐 Admin
-                            </a>
+                            <button class="nav-link text-danger" onclick="logout()">
+                                🚪 Cerrar Sesión
+                            </button>
                         </li>
                     </ul>
                 </div>
@@ -51,7 +51,7 @@
             <div class="main-header">
                 <h1>🎫 Comprar Boletos</h1>
                 <div class="user-info">
-                    <span class="user-email">Cliente</span>
+                    <span id="userEmail" class="user-email">Cargando...</span>
                 </div>
             </div>
 
@@ -96,6 +96,8 @@
                                         <option value="2">2 boletos</option>
                                         <option value="3">3 boletos</option>
                                         <option value="4">4 boletos</option>
+                                        <option value="5">5 boletos</option>
+                                        <option value="6">6 boletos</option>
                                     </select>
                                 </div>
                                 <div class="mb-3">
@@ -106,13 +108,19 @@
                             <div class="col-md-6">
                                 <h5>Información de Pago</h5>
                                 <div class="mb-3">
+                                    <label class="form-label">Nombre completo</label>
+                                    <input type="text" class="form-control" id="nombreCliente"
+                                        placeholder="Nombre completo" required>
+                                </div>
+                                <div class="mb-3">
                                     <label class="form-label">Email</label>
-                                    <input type="email" class="form-control" id="emailCliente" required>
+                                    <input type="email" class="form-control" id="emailCliente" placeholder="Email"
+                                        required>
                                 </div>
                                 <div class="mb-3">
                                     <label class="form-label">Número de Tarjeta</label>
                                     <input type="text" class="form-control" id="numeroTarjeta"
-                                        placeholder="1234 5678 9012 3456" required maxlength="19">
+                                        placeholder="Número de la tarjeta" required maxlength="19">
                                 </div>
                                 <div class="row">
                                     <div class="col-6">
@@ -122,7 +130,7 @@
                                     </div>
                                     <div class="col-6">
                                         <label class="form-label">CVV</label>
-                                        <input type="text" class="form-control" id="cvv" placeholder="123" required
+                                        <input type="text" class="form-control" id="cvv" placeholder="CVV" required
                                             maxlength="3">
                                     </div>
                                 </div>
